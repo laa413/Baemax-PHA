@@ -1,25 +1,296 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HomeVC" id="BYZ-38-t0r" customClass="ViewController" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baemax" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-oR-im9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tummy" translatesAutoresizingMaskIntoConstraints="NO" id="nh8-Dr-auJ">
+                                <rect key="frame" x="58" y="352" width="259" height="258"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOq-AC-DKR">
+                                <rect key="frame" x="77" y="391" width="70" height="70"/>
+                                <state key="normal" image="Sick"/>
+                                <connections>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="fOB-B1-tYr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58m-XD-FVI">
+                                <rect key="frame" x="227" y="391" width="70" height="70"/>
+                                <state key="normal" image="Stress"/>
+                                <connections>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="oPA-7n-mE2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLn-wr-aBh">
+                                <rect key="frame" x="151" y="391" width="70" height="70"/>
+                                <state key="normal" image="Sad"/>
+                                <connections>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="A4y-er-qys"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6Y-C8-PwI">
+                                <rect key="frame" x="77" y="500" width="70" height="70"/>
+                                <state key="normal" image="Bored"/>
+                                <connections>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="A7h-qO-vAM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O79-R5-Nka">
+                                <rect key="frame" x="227" y="500" width="70" height="70"/>
+                                <state key="normal" image="Happy"/>
+                                <connections>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="smd-Vl-3WJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKf-Sp-H71">
+                                <rect key="frame" x="151" y="500" width="70" height="70"/>
+                                <state key="normal" image="Tired"/>
+                                <connections>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="uTO-tq-2Mq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello! I'm Baemax, your personal health assistant" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYP-iV-15y">
+                                <rect key="frame" x="58" y="48" width="259" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZE1-pN-Ai5">
+                                <rect key="frame" x="89" y="617" width="46" height="30"/>
+                                <state key="normal" title="Stats"/>
+                                <connections>
+                                    <segue destination="0cX-GJ-mFF" kind="show" id="8i2-ji-vzs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXl-Vt-ZrW">
+                                <rect key="frame" x="233" y="618" width="58" height="30"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="SbV-Z9-hHb" kind="show" id="4Nj-1O-KyQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="244.5" y="319.5"/>
+        </scene>
+        <!--RatingVC-->
+        <scene sceneID="1Eg-N0-e3S">
+            <objects>
+                <viewController title="RatingVC" id="bBU-nY-qHo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6OO-Yr-rtw"/>
+                        <viewControllerLayoutGuide type="bottom" id="qDx-Xb-8ju"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bda-PY-JmD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baemax" translatesAutoresizingMaskIntoConstraints="NO" id="3pk-Vo-P7w">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tummy" translatesAutoresizingMaskIntoConstraints="NO" id="nfD-VE-eA6">
+                                <rect key="frame" x="58" y="352" width="259" height="258"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-jd-Kb6">
+                                <rect key="frame" x="247" y="550" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="jPO-c2-Ei7" kind="show" id="RzF-2S-yKl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMA-Ny-Nvy">
+                                <rect key="frame" x="90" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Ink-vv-PjJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edk-tE-NYI">
+                                <rect key="frame" x="58" y="49" width="259" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WfB-Y6-imb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764.5" y="319.5"/>
+        </scene>
+        <!--QuestionVC-->
+        <scene sceneID="Fqu-fv-UlL">
+            <objects>
+                <viewController title="QuestionVC" id="jPO-c2-Ei7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qj5-nv-h0s"/>
+                        <viewControllerLayoutGuide type="bottom" id="qrB-F2-uGH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y8b-iw-c4w">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baemax" translatesAutoresizingMaskIntoConstraints="NO" id="95L-w8-QJD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tummy" translatesAutoresizingMaskIntoConstraints="NO" id="Hen-bN-cs1">
+                                <rect key="frame" x="58" y="352" width="259" height="258"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B16-dx-nHd">
+                                <rect key="frame" x="247" y="550" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="VHb-H8-AsJ" kind="show" id="TLo-TE-HEM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXH-ID-oGL">
+                                <rect key="frame" x="90" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="jDR-Gd-FZH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-RX-Mbc">
+                                <rect key="frame" x="58" y="48" width="259" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JC6-gl-5Xg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284.5" y="319.5"/>
+        </scene>
+        <!--ResultVC-->
+        <scene sceneID="Apu-lg-hkw">
+            <objects>
+                <viewController title="ResultVC" id="VHb-H8-AsJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nA9-HU-W2r"/>
+                        <viewControllerLayoutGuide type="bottom" id="HUy-ca-hau"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BqP-sj-rLO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Baemax" translatesAutoresizingMaskIntoConstraints="NO" id="vs7-Uk-BpG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tummy" translatesAutoresizingMaskIntoConstraints="NO" id="9SR-2z-DVV">
+                                <rect key="frame" x="58" y="352" width="259" height="258"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLG-hF-fZQ">
+                                <rect key="frame" x="243" y="550" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="PVP-om-1GF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u32-MJ-nAb">
+                                <rect key="frame" x="90" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXS-kN-dW7">
+                                <rect key="frame" x="58" y="46" width="259" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ac-iz-7DZ">
+                                <rect key="frame" x="90" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="jPO-c2-Ei7" kind="show" id="2UV-GG-0oo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fjm-SU-a3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820.5" y="319.5"/>
+        </scene>
+        <!--StatsVC-->
+        <scene sceneID="XXd-ko-8G9">
+            <objects>
+                <viewController title="StatsVC" id="0cX-GJ-mFF" customClass="ViewController" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tck-gd-vVS"/>
+                        <viewControllerLayoutGuide type="bottom" id="imd-xi-9Nh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ayW-Tp-0uW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lAo-MY-MSh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31.5" y="1124.5"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="J0r-gu-pjU">
+            <objects>
+                <viewController title="SettingsVC" id="SbV-Z9-hHb" customClass="ViewController" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jvl-5K-Fc4"/>
+                        <viewControllerLayoutGuide type="bottom" id="5u3-nq-pZo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kux-D5-bLd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbj-Ug-Yic" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506.5" y="1124.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Baemax" width="166" height="295"/>
+        <image name="Bored" width="173" height="173"/>
+        <image name="Happy" width="173" height="173"/>
+        <image name="Sad" width="173" height="173"/>
+        <image name="Sick" width="173" height="173"/>
+        <image name="Stress" width="173" height="173"/>
+        <image name="Tired" width="173" height="173"/>
+        <image name="Tummy" width="237" height="240"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PVP-om-1GF"/>
+        <segue reference="2UV-GG-0oo"/>
+        <segue reference="jDR-Gd-FZH"/>
+    </inferredMetricsTieBreakers>
 </document>
