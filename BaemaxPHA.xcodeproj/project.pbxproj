@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB5126871CD0730700543D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126861CD0730700543D59 /* AppDelegate.swift */; };
+		FB5126891CD0730700543D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126881CD0730700543D59 /* ViewController.swift */; };
+		FB51268C1CD0730700543D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB51268A1CD0730700543D59 /* Main.storyboard */; };
+		FB51268E1CD0730700543D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB51268D1CD0730700543D59 /* Assets.xcassets */; };
+		FB5126911CD0730700543D59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB51268F1CD0730700543D59 /* LaunchScreen.storyboard */; };
+		FB51269C1CD0730800543D59 /* BaemaxPHATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51269B1CD0730800543D59 /* BaemaxPHATests.swift */; };
+		FB5126A71CD0730800543D59 /* BaemaxPHAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126A61CD0730800543D59 /* BaemaxPHAUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB5126981CD0730800543D59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB51267B1CD0730700543D59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB5126821CD0730700543D59;
+			remoteInfo = BaemaxPHA;
+		};
+		FB5126A31CD0730800543D59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB51267B1CD0730700543D59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB5126821CD0730700543D59;
+			remoteInfo = BaemaxPHA;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB5126831CD0730700543D59 /* BaemaxPHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaemaxPHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB5126861CD0730700543D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB5126881CD0730700543D59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB51268B1CD0730700543D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB51268D1CD0730700543D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB5126901CD0730700543D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB5126921CD0730700543D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB5126971CD0730700543D59 /* BaemaxPHATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaemaxPHATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB51269B1CD0730800543D59 /* BaemaxPHATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaemaxPHATests.swift; sourceTree = "<group>"; };
+		FB51269D1CD0730800543D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB5126A21CD0730800543D59 /* BaemaxPHAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaemaxPHAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB5126A61CD0730800543D59 /* BaemaxPHAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaemaxPHAUITests.swift; sourceTree = "<group>"; };
+		FB5126A81CD0730800543D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB5126801CD0730700543D59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5126941CD0730700543D59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51269F1CD0730800543D59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB51267A1CD0730700543D59 = {
+			isa = PBXGroup;
+			children = (
+				FB5126851CD0730700543D59 /* BaemaxPHA */,
+				FB51269A1CD0730800543D59 /* BaemaxPHATests */,
+				FB5126A51CD0730800543D59 /* BaemaxPHAUITests */,
+				FB5126841CD0730700543D59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB5126841CD0730700543D59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB5126831CD0730700543D59 /* BaemaxPHA.app */,
+				FB5126971CD0730700543D59 /* BaemaxPHATests.xctest */,
+				FB5126A21CD0730800543D59 /* BaemaxPHAUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB5126851CD0730700543D59 /* BaemaxPHA */ = {
+			isa = PBXGroup;
+			children = (
+				FB5126861CD0730700543D59 /* AppDelegate.swift */,
+				FB5126881CD0730700543D59 /* ViewController.swift */,
+				FB51268A1CD0730700543D59 /* Main.storyboard */,
+				FB51268D1CD0730700543D59 /* Assets.xcassets */,
+				FB51268F1CD0730700543D59 /* LaunchScreen.storyboard */,
+				FB5126921CD0730700543D59 /* Info.plist */,
+			);
+			path = BaemaxPHA;
+			sourceTree = "<group>";
+		};
+		FB51269A1CD0730800543D59 /* BaemaxPHATests */ = {
+			isa = PBXGroup;
+			children = (
+				FB51269B1CD0730800543D59 /* BaemaxPHATests.swift */,
+				FB51269D1CD0730800543D59 /* Info.plist */,
+			);
+			path = BaemaxPHATests;
+			sourceTree = "<group>";
+		};
+		FB5126A51CD0730800543D59 /* BaemaxPHAUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FB5126A61CD0730800543D59 /* BaemaxPHAUITests.swift */,
+				FB5126A81CD0730800543D59 /* Info.plist */,
+			);
+			path = BaemaxPHAUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB5126821CD0730700543D59 /* BaemaxPHA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB5126AB1CD0730800543D59 /* Build configuration list for PBXNativeTarget "BaemaxPHA" */;
+			buildPhases = (
+				FB51267F1CD0730700543D59 /* Sources */,
+				FB5126801CD0730700543D59 /* Frameworks */,
+				FB5126811CD0730700543D59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaemaxPHA;
+			productName = BaemaxPHA;
+			productReference = FB5126831CD0730700543D59 /* BaemaxPHA.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB5126961CD0730700543D59 /* BaemaxPHATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB5126AE1CD0730800543D59 /* Build configuration list for PBXNativeTarget "BaemaxPHATests" */;
+			buildPhases = (
+				FB5126931CD0730700543D59 /* Sources */,
+				FB5126941CD0730700543D59 /* Frameworks */,
+				FB5126951CD0730700543D59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB5126991CD0730800543D59 /* PBXTargetDependency */,
+			);
+			name = BaemaxPHATests;
+			productName = BaemaxPHATests;
+			productReference = FB5126971CD0730700543D59 /* BaemaxPHATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB5126A11CD0730800543D59 /* BaemaxPHAUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB5126B11CD0730800543D59 /* Build configuration list for PBXNativeTarget "BaemaxPHAUITests" */;
+			buildPhases = (
+				FB51269E1CD0730800543D59 /* Sources */,
+				FB51269F1CD0730800543D59 /* Frameworks */,
+				FB5126A01CD0730800543D59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB5126A41CD0730800543D59 /* PBXTargetDependency */,
+			);
+			name = BaemaxPHAUITests;
+			productName = BaemaxPHAUITests;
+			productReference = FB5126A21CD0730800543D59 /* BaemaxPHAUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB51267B1CD0730700543D59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Lindsey Abramson";
+				TargetAttributes = {
+					FB5126821CD0730700543D59 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = VKFZ5H6FQM;
+					};
+					FB5126961CD0730700543D59 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = VKFZ5H6FQM;
+						TestTargetID = FB5126821CD0730700543D59;
+					};
+					FB5126A11CD0730800543D59 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = VKFZ5H6FQM;
+						TestTargetID = FB5126821CD0730700543D59;
+					};
+				};
+			};
+			buildConfigurationList = FB51267E1CD0730700543D59 /* Build configuration list for PBXProject "BaemaxPHA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB51267A1CD0730700543D59;
+			productRefGroup = FB5126841CD0730700543D59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB5126821CD0730700543D59 /* BaemaxPHA */,
+				FB5126961CD0730700543D59 /* BaemaxPHATests */,
+				FB5126A11CD0730800543D59 /* BaemaxPHAUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB5126811CD0730700543D59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5126911CD0730700543D59 /* LaunchScreen.storyboard in Resources */,
+				FB51268E1CD0730700543D59 /* Assets.xcassets in Resources */,
+				FB51268C1CD0730700543D59 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5126951CD0730700543D59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5126A01CD0730800543D59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB51267F1CD0730700543D59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5126891CD0730700543D59 /* ViewController.swift in Sources */,
+				FB5126871CD0730700543D59 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB5126931CD0730700543D59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB51269C1CD0730800543D59 /* BaemaxPHATests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB51269E1CD0730800543D59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5126A71CD0730800543D59 /* BaemaxPHAUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB5126991CD0730800543D59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB5126821CD0730700543D59 /* BaemaxPHA */;
+			targetProxy = FB5126981CD0730800543D59 /* PBXContainerItemProxy */;
+		};
+		FB5126A41CD0730800543D59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB5126821CD0730700543D59 /* BaemaxPHA */;
+			targetProxy = FB5126A31CD0730800543D59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB51268A1CD0730700543D59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB51268B1CD0730700543D59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB51268F1CD0730700543D59 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB5126901CD0730700543D59 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB5126A91CD0730800543D59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB5126AA1CD0730800543D59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB5126AC1CD0730800543D59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BaemaxPHA/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = laa.BaemaxPHA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB5126AD1CD0730800543D59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BaemaxPHA/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = laa.BaemaxPHA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FB5126AF1CD0730800543D59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BaemaxPHATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = laa.BaemaxPHATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaemaxPHA.app/BaemaxPHA";
+			};
+			name = Debug;
+		};
+		FB5126B01CD0730800543D59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BaemaxPHATests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = laa.BaemaxPHATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaemaxPHA.app/BaemaxPHA";
+			};
+			name = Release;
+		};
+		FB5126B21CD0730800543D59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BaemaxPHAUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = laa.BaemaxPHAUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BaemaxPHA;
+			};
+			name = Debug;
+		};
+		FB5126B31CD0730800543D59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BaemaxPHAUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = laa.BaemaxPHAUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BaemaxPHA;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB51267E1CD0730700543D59 /* Build configuration list for PBXProject "BaemaxPHA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB5126A91CD0730800543D59 /* Debug */,
+				FB5126AA1CD0730800543D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB5126AB1CD0730800543D59 /* Build configuration list for PBXNativeTarget "BaemaxPHA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB5126AC1CD0730800543D59 /* Debug */,
+				FB5126AD1CD0730800543D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB5126AE1CD0730800543D59 /* Build configuration list for PBXNativeTarget "BaemaxPHATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB5126AF1CD0730800543D59 /* Debug */,
+				FB5126B01CD0730800543D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB5126B11CD0730800543D59 /* Build configuration list for PBXNativeTarget "BaemaxPHAUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB5126B21CD0730800543D59 /* Debug */,
+				FB5126B31CD0730800543D59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB51267B1CD0730700543D59 /* Project object */;
+}
