@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D3579E5A32FECA797022205B3844545F07017266",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D3579E5A32FECA797022205B3844545F07017266" : 0,
+    "C15A48E5799363A731F52E132777A153BC98DC91" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8B9224EB-B95A-47D1-A557-A036539D0CCC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D3579E5A32FECA797022205B3844545F07017266" : "BaemaxPHA\/",
+    "C15A48E5799363A731F52E132777A153BC98DC91" : "..\/Documents\/BaemaxPHA%202%202"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BaemaxPHA",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BaemaxPHA.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/laa413\/BaemaxPHA-2nd-Repo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C15A48E5799363A731F52E132777A153BC98DC91"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/laa413\/Baemax-PHA.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D3579E5A32FECA797022205B3844545F07017266"
+    }
+  ]
+}

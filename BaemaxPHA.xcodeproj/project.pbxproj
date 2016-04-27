@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB5126871CD0730700543D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126861CD0730700543D59 /* AppDelegate.swift */; };
-		FB5126891CD0730700543D59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126881CD0730700543D59 /* ViewController.swift */; };
 		FB51268C1CD0730700543D59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB51268A1CD0730700543D59 /* Main.storyboard */; };
 		FB51268E1CD0730700543D59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB51268D1CD0730700543D59 /* Assets.xcassets */; };
 		FB5126911CD0730700543D59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB51268F1CD0730700543D59 /* LaunchScreen.storyboard */; };
 		FB51269C1CD0730800543D59 /* BaemaxPHATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51269B1CD0730800543D59 /* BaemaxPHATests.swift */; };
 		FB5126A71CD0730800543D59 /* BaemaxPHAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126A61CD0730800543D59 /* BaemaxPHAUITests.swift */; };
+		FB5126C11CD08D2800543D59 /* SettingsStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B41CD08D2800543D59 /* SettingsStatsVC.swift */; };
+		FB5126C21CD08D2800543D59 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B51CD08D2800543D59 /* QuestionVC.swift */; };
+		FB5126C31CD08D2800543D59 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B61CD08D2800543D59 /* Questions.swift */; };
+		FB5126C41CD08D2800543D59 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B71CD08D2800543D59 /* ResultVC.swift */; };
+		FB5126C51CD08D2800543D59 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B81CD08D2800543D59 /* HomeVC.swift */; };
+		FB5126C61CD08D2800543D59 /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B91CD08D2800543D59 /* RatingVC.swift */; };
+		FB5126C71CD08D2800543D59 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126BA1CD08D2800543D59 /* Emotion.swift */; };
+		FB5126C81CD08D2800543D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126BB1CD08D2800543D59 /* AppDelegate.swift */; };
+		FB5126CA1CD08D2800543D59 /* MyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126BD1CD08D2800543D59 /* MyLinkedList.swift */; };
+		FB5126CC1CD08D2800543D59 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126BF1CD08D2800543D59 /* Node.swift */; };
+		FB5126D11CD096D100543D59 /* QA.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB5126D01CD096D100543D59 /* QA.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +44,6 @@
 
 /* Begin PBXFileReference section */
 		FB5126831CD0730700543D59 /* BaemaxPHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaemaxPHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB5126861CD0730700543D59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB5126881CD0730700543D59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FB51268B1CD0730700543D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB51268D1CD0730700543D59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB5126901CD0730700543D59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,17 @@
 		FB5126A21CD0730800543D59 /* BaemaxPHAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaemaxPHAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5126A61CD0730800543D59 /* BaemaxPHAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaemaxPHAUITests.swift; sourceTree = "<group>"; };
 		FB5126A81CD0730800543D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB5126B41CD08D2800543D59 /* SettingsStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsStatsVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/SettingsStatsVC.swift"; sourceTree = "<group>"; };
+		FB5126B51CD08D2800543D59 /* QuestionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/QuestionVC.swift"; sourceTree = "<group>"; };
+		FB5126B61CD08D2800543D59 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Questions.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/Questions.swift"; sourceTree = "<group>"; };
+		FB5126B71CD08D2800543D59 /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/ResultVC.swift"; sourceTree = "<group>"; };
+		FB5126B81CD08D2800543D59 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/HomeVC.swift"; sourceTree = "<group>"; };
+		FB5126B91CD08D2800543D59 /* RatingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/RatingVC.swift"; sourceTree = "<group>"; };
+		FB5126BA1CD08D2800543D59 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Emotion.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/Emotion.swift"; sourceTree = "<group>"; };
+		FB5126BB1CD08D2800543D59 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/AppDelegate.swift"; sourceTree = "<group>"; };
+		FB5126BD1CD08D2800543D59 /* MyLinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyLinkedList.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/MyLinkedList.swift"; sourceTree = "<group>"; };
+		FB5126BF1CD08D2800543D59 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Node.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/Node.swift"; sourceTree = "<group>"; };
+		FB5126D01CD096D100543D59 /* QA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QA.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +115,17 @@
 		FB5126851CD0730700543D59 /* BaemaxPHA */ = {
 			isa = PBXGroup;
 			children = (
-				FB5126861CD0730700543D59 /* AppDelegate.swift */,
-				FB5126881CD0730700543D59 /* ViewController.swift */,
+				FB5126BB1CD08D2800543D59 /* AppDelegate.swift */,
+				FB5126B81CD08D2800543D59 /* HomeVC.swift */,
+				FB5126B91CD08D2800543D59 /* RatingVC.swift */,
+				FB5126B51CD08D2800543D59 /* QuestionVC.swift */,
+				FB5126B61CD08D2800543D59 /* Questions.swift */,
+				FB5126B71CD08D2800543D59 /* ResultVC.swift */,
+				FB5126B41CD08D2800543D59 /* SettingsStatsVC.swift */,
+				FB5126BD1CD08D2800543D59 /* MyLinkedList.swift */,
+				FB5126BF1CD08D2800543D59 /* Node.swift */,
+				FB5126BA1CD08D2800543D59 /* Emotion.swift */,
+				FB5126D01CD096D100543D59 /* QA.plist */,
 				FB51268A1CD0730700543D59 /* Main.storyboard */,
 				FB51268D1CD0730700543D59 /* Assets.xcassets */,
 				FB51268F1CD0730700543D59 /* LaunchScreen.storyboard */,
@@ -235,6 +262,7 @@
 				FB5126911CD0730700543D59 /* LaunchScreen.storyboard in Resources */,
 				FB51268E1CD0730700543D59 /* Assets.xcassets in Resources */,
 				FB51268C1CD0730700543D59 /* Main.storyboard in Resources */,
+				FB5126D11CD096D100543D59 /* QA.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB5126891CD0730700543D59 /* ViewController.swift in Sources */,
-				FB5126871CD0730700543D59 /* AppDelegate.swift in Sources */,
+				FB5126C21CD08D2800543D59 /* QuestionVC.swift in Sources */,
+				FB5126C41CD08D2800543D59 /* ResultVC.swift in Sources */,
+				FB5126CC1CD08D2800543D59 /* Node.swift in Sources */,
+				FB5126C51CD08D2800543D59 /* HomeVC.swift in Sources */,
+				FB5126CA1CD08D2800543D59 /* MyLinkedList.swift in Sources */,
+				FB5126C71CD08D2800543D59 /* Emotion.swift in Sources */,
+				FB5126C31CD08D2800543D59 /* Questions.swift in Sources */,
+				FB5126C11CD08D2800543D59 /* SettingsStatsVC.swift in Sources */,
+				FB5126C81CD08D2800543D59 /* AppDelegate.swift in Sources */,
+				FB5126C61CD08D2800543D59 /* RatingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

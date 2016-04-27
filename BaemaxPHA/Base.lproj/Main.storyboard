@@ -8,7 +8,7 @@
         <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="HomeVC" id="BYZ-38-t0r" customClass="ViewController" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,6 +27,7 @@
                                 <rect key="frame" x="77" y="391" width="70" height="70"/>
                                 <state key="normal" image="Sick"/>
                                 <connections>
+                                    <action selector="sickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Anw-w2-Ds8"/>
                                     <segue destination="bBU-nY-qHo" kind="show" id="fOB-B1-tYr"/>
                                 </connections>
                             </button>
@@ -34,6 +35,7 @@
                                 <rect key="frame" x="227" y="391" width="70" height="70"/>
                                 <state key="normal" image="Stress"/>
                                 <connections>
+                                    <action selector="stressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNC-Ig-BBK"/>
                                     <segue destination="bBU-nY-qHo" kind="show" id="oPA-7n-mE2"/>
                                 </connections>
                             </button>
@@ -41,6 +43,7 @@
                                 <rect key="frame" x="151" y="391" width="70" height="70"/>
                                 <state key="normal" image="Sad"/>
                                 <connections>
+                                    <action selector="sadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1IJ-aT-Gng"/>
                                     <segue destination="bBU-nY-qHo" kind="show" id="A4y-er-qys"/>
                                 </connections>
                             </button>
@@ -48,6 +51,7 @@
                                 <rect key="frame" x="77" y="500" width="70" height="70"/>
                                 <state key="normal" image="Bored"/>
                                 <connections>
+                                    <action selector="boredButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdz-Jy-3u8"/>
                                     <segue destination="bBU-nY-qHo" kind="show" id="A7h-qO-vAM"/>
                                 </connections>
                             </button>
@@ -55,6 +59,7 @@
                                 <rect key="frame" x="227" y="500" width="70" height="70"/>
                                 <state key="normal" image="Happy"/>
                                 <connections>
+                                    <action selector="happyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="acE-7h-2P7"/>
                                     <segue destination="bBU-nY-qHo" kind="show" id="smd-Vl-3WJ"/>
                                 </connections>
                             </button>
@@ -62,6 +67,7 @@
                                 <rect key="frame" x="151" y="500" width="70" height="70"/>
                                 <state key="normal" image="Tired"/>
                                 <connections>
+                                    <action selector="sleepyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIH-p9-px7"/>
                                     <segue destination="bBU-nY-qHo" kind="show" id="uTO-tq-2Mq"/>
                                 </connections>
                             </button>
@@ -82,6 +88,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="BaemaxQuote1" destination="DYP-iV-15y" id="fKU-dC-vTO"/>
+                        <outlet property="BoredButton" destination="w6Y-C8-PwI" id="iTb-ud-QxH"/>
+                        <outlet property="HappyButton" destination="O79-R5-Nka" id="Orp-db-zQu"/>
+                        <outlet property="SadButton" destination="cLn-wr-aBh" id="B7H-vu-61n"/>
+                        <outlet property="SickButton" destination="TOq-AC-DKR" id="M67-8R-dxM"/>
+                        <outlet property="SleepyButton" destination="EKf-Sp-H71" id="H2y-I8-JRa"/>
+                        <outlet property="StressedButton" destination="58m-XD-FVI" id="NtI-oq-inI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +105,7 @@
         <!--RatingVC-->
         <scene sceneID="1Eg-N0-e3S">
             <objects>
-                <viewController title="RatingVC" id="bBU-nY-qHo" sceneMemberID="viewController">
+                <viewController title="RatingVC" id="bBU-nY-qHo" customClass="RatingVC" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6OO-Yr-rtw"/>
                         <viewControllerLayoutGuide type="bottom" id="qDx-Xb-8ju"/>
@@ -125,24 +140,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eV4-2h-cpt">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="eV4-2h-cpt">
                                 <rect key="frame" x="88" y="466" width="193" height="31"/>
+                                <connections>
+                                    <action selector="ratingChange:" destination="bBU-nY-qHo" eventType="valueChanged" id="tUe-dI-Owa"/>
+                                </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pux-eB-Rca">
+                                <rect key="frame" x="237" y="445" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yO-kD-SiQ">
                                 <rect key="frame" x="90" y="445" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czW-L2-dg7">
-                                <rect key="frame" x="166" y="402" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pux-eB-Rca">
-                                <rect key="frame" x="237" y="445" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czW-L2-dg7">
+                                <rect key="frame" x="154" y="395" width="66" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -150,6 +168,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="BaemaxQuote2" destination="edk-tE-NYI" id="N7Z-kB-xCe"/>
+                        <outlet property="PainSlider" destination="eV4-2h-cpt" id="aRC-lu-sYG"/>
+                        <outlet property="ratingValue" destination="czW-L2-dg7" id="ocJ-PM-BCq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfB-Y6-imb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,7 +181,7 @@
         <!--QuestionVC-->
         <scene sceneID="Fqu-fv-UlL">
             <objects>
-                <viewController title="QuestionVC" id="jPO-c2-Ei7" sceneMemberID="viewController">
+                <viewController title="QuestionVC" id="jPO-c2-Ei7" customClass="QuestionVC" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qj5-nv-h0s"/>
                         <viewControllerLayoutGuide type="bottom" id="qrB-F2-uGH"/>
@@ -200,6 +223,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="AnsPicker" destination="eNk-bP-zHB" id="2sb-mH-uIN"/>
+                        <outlet property="BaemaxQuote3" destination="OVV-RX-Mbc" id="XZP-ZI-NQM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JC6-gl-5Xg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,7 +235,7 @@
         <!--ResultVC-->
         <scene sceneID="Apu-lg-hkw">
             <objects>
-                <viewController title="ResultVC" id="VHb-H8-AsJ" sceneMemberID="viewController">
+                <viewController title="ResultVC" id="VHb-H8-AsJ" customClass="ResultVC" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nA9-HU-W2r"/>
                         <viewControllerLayoutGuide type="bottom" id="HUy-ca-hau"/>
@@ -258,6 +285,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="BaemaxQuote4" destination="oXS-kN-dW7" id="DrP-ol-hSn"/>
+                        <outlet property="ResultText" destination="mrM-kk-yq7" id="OtR-tw-KCq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fjm-SU-a3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,7 +297,7 @@
         <!--SettingsStatsVC-->
         <scene sceneID="J0r-gu-pjU">
             <objects>
-                <viewController title="SettingsStatsVC" id="SbV-Z9-hHb" customClass="ViewController" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SettingsStatsVC" id="SbV-Z9-hHb" customClass="SettingsStatsVC" customModule="BaemaxPHA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jvl-5K-Fc4"/>
                         <viewControllerLayoutGuide type="bottom" id="5u3-nq-pZo"/>
@@ -386,8 +417,8 @@
         <image name="Tummy" width="237" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zg5-28-ZZe"/>
-        <segue reference="uTO-tq-2Mq"/>
-        <segue reference="2UV-GG-0oo"/>
+        <segue reference="Ink-vv-PjJ"/>
+        <segue reference="jDR-Gd-FZH"/>
+        <segue reference="RzF-2S-yKl"/>
     </inferredMetricsTieBreakers>
 </document>
