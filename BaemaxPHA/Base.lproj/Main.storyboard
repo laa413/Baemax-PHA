@@ -27,48 +27,40 @@
                                 <rect key="frame" x="77" y="391" width="70" height="70"/>
                                 <state key="normal" image="Sick"/>
                                 <connections>
-                                    <action selector="sickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Anw-w2-Ds8"/>
-                                    <segue destination="bBU-nY-qHo" kind="show" id="fOB-B1-tYr"/>
+                                    <action selector="sickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1I6-M5-hdO"/>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="GJk-At-A4O"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58m-XD-FVI">
                                 <rect key="frame" x="227" y="391" width="70" height="70"/>
                                 <state key="normal" image="Stress"/>
                                 <connections>
-                                    <action selector="stressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNC-Ig-BBK"/>
-                                    <segue destination="bBU-nY-qHo" kind="show" id="oPA-7n-mE2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLn-wr-aBh">
-                                <rect key="frame" x="151" y="391" width="70" height="70"/>
-                                <state key="normal" image="Sad"/>
-                                <connections>
-                                    <action selector="sadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1IJ-aT-Gng"/>
-                                    <segue destination="bBU-nY-qHo" kind="show" id="A4y-er-qys"/>
+                                    <action selector="stressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MsK-GC-YyD"/>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="YaU-sU-Ih0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6Y-C8-PwI">
                                 <rect key="frame" x="77" y="500" width="70" height="70"/>
                                 <state key="normal" image="Bored"/>
                                 <connections>
-                                    <action selector="boredButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gdz-Jy-3u8"/>
-                                    <segue destination="bBU-nY-qHo" kind="show" id="A7h-qO-vAM"/>
+                                    <action selector="boredButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u3F-D9-sz0"/>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="Fy4-wn-6kt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O79-R5-Nka">
                                 <rect key="frame" x="227" y="500" width="70" height="70"/>
                                 <state key="normal" image="Happy"/>
                                 <connections>
-                                    <action selector="happyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="acE-7h-2P7"/>
-                                    <segue destination="bBU-nY-qHo" kind="show" id="smd-Vl-3WJ"/>
+                                    <action selector="happyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6BP-rA-XTK"/>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="1a0-dA-RoQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKf-Sp-H71">
                                 <rect key="frame" x="151" y="500" width="70" height="70"/>
                                 <state key="normal" image="Tired"/>
                                 <connections>
-                                    <action selector="sleepyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qIH-p9-px7"/>
-                                    <segue destination="bBU-nY-qHo" kind="show" id="uTO-tq-2Mq"/>
+                                    <action selector="sleepyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lex-cO-Sh5"/>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="yHz-9J-IRK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello! I'm Baemax, your personal health assistant" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYP-iV-15y">
@@ -77,11 +69,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLn-wr-aBh">
+                                <rect key="frame" x="151" y="391" width="70" height="70"/>
+                                <state key="normal" image="Sad"/>
+                                <connections>
+                                    <action selector="sadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g0V-xP-5PB"/>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="tBV-gv-Upm"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXl-Vt-ZrW">
-                                <rect key="frame" x="132" y="618" width="111" height="30"/>
+                                <rect key="frame" x="126" y="618" width="121" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Settings &amp; Stats"/>
                                 <connections>
-                                    <segue destination="SbV-Z9-hHb" kind="show" id="4Nj-1O-KyQ"/>
+                                    <segue destination="SbV-Z9-hHb" kind="show" id="Kdk-7n-J6K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,13 +90,13 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="BaemaxQuote1" destination="DYP-iV-15y" id="fKU-dC-vTO"/>
-                        <outlet property="BoredButton" destination="w6Y-C8-PwI" id="iTb-ud-QxH"/>
-                        <outlet property="HappyButton" destination="O79-R5-Nka" id="Orp-db-zQu"/>
-                        <outlet property="SadButton" destination="cLn-wr-aBh" id="B7H-vu-61n"/>
-                        <outlet property="SickButton" destination="TOq-AC-DKR" id="M67-8R-dxM"/>
-                        <outlet property="SleepyButton" destination="EKf-Sp-H71" id="H2y-I8-JRa"/>
-                        <outlet property="StressedButton" destination="58m-XD-FVI" id="NtI-oq-inI"/>
+                        <outlet property="BaemaxQuote1" destination="DYP-iV-15y" id="4Xd-c7-Dai"/>
+                        <outlet property="BoredButton" destination="w6Y-C8-PwI" id="fH6-zU-H3n"/>
+                        <outlet property="HappyButton" destination="O79-R5-Nka" id="f31-U2-DTR"/>
+                        <outlet property="SadButton" destination="cLn-wr-aBh" id="gyt-pk-n4j"/>
+                        <outlet property="SickButton" destination="TOq-AC-DKR" id="0zt-u6-xsZ"/>
+                        <outlet property="SleepyButton" destination="EKf-Sp-H71" id="mMj-Ve-w9p"/>
+                        <outlet property="StressedButton" destination="58m-XD-FVI" id="4xc-Y1-N6P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,17 +122,19 @@
                                 <rect key="frame" x="58" y="352" width="259" height="258"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-jd-Kb6">
-                                <rect key="frame" x="247" y="550" width="32" height="30"/>
+                                <rect key="frame" x="237" y="550" width="42" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="jPO-c2-Ei7" kind="show" id="RzF-2S-yKl"/>
+                                    <segue destination="jPO-c2-Ei7" kind="show" id="fR6-gN-YxQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMA-Ny-Nvy">
-                                <rect key="frame" x="90" y="550" width="34" height="30"/>
+                                <rect key="frame" x="90" y="550" width="42" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Ink-vv-PjJ"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="iIe-vm-Oqp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edk-tE-NYI">
@@ -140,12 +143,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="eV4-2h-cpt">
-                                <rect key="frame" x="88" y="466" width="193" height="31"/>
-                                <connections>
-                                    <action selector="ratingChange:" destination="bBU-nY-qHo" eventType="valueChanged" id="tUe-dI-Owa"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pux-eB-Rca">
                                 <rect key="frame" x="237" y="445" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -164,14 +161,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="83O-O2-wZt">
+                                <rect key="frame" x="88" y="466" width="193" height="31"/>
+                                <connections>
+                                    <action selector="ratingChanged:" destination="bBU-nY-qHo" eventType="valueChanged" id="DJG-If-B9e"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="BaemaxQuote2" destination="edk-tE-NYI" id="N7Z-kB-xCe"/>
-                        <outlet property="PainSlider" destination="eV4-2h-cpt" id="aRC-lu-sYG"/>
-                        <outlet property="ratingValue" destination="czW-L2-dg7" id="ocJ-PM-BCq"/>
+                        <outlet property="BaemaxQuote2" destination="edk-tE-NYI" id="WUW-xD-lNa"/>
+                        <outlet property="ratingSlider" destination="83O-O2-wZt" id="Shv-B6-zRY"/>
+                        <outlet property="ratingValue" destination="czW-L2-dg7" id="dBQ-x2-FhG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfB-Y6-imb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -196,36 +199,38 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tummy" translatesAutoresizingMaskIntoConstraints="NO" id="Hen-bN-cs1">
                                 <rect key="frame" x="58" y="352" width="259" height="258"/>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNk-bP-zHB">
+                                <rect key="frame" x="69" y="364" width="237" height="178"/>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B16-dx-nHd">
-                                <rect key="frame" x="247" y="550" width="32" height="30"/>
+                                <rect key="frame" x="243" y="550" width="36" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
-                                    <segue destination="VHb-H8-AsJ" kind="show" id="TLo-TE-HEM"/>
+                                    <segue destination="VHb-H8-AsJ" kind="show" id="i7J-Bc-BmD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXH-ID-oGL">
-                                <rect key="frame" x="90" y="550" width="34" height="30"/>
+                                <rect key="frame" x="90" y="550" width="41" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="bBU-nY-qHo" kind="show" id="jDR-Gd-FZH"/>
+                                    <segue destination="bBU-nY-qHo" kind="show" id="lqV-Ig-RnE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-RX-Mbc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-RX-Mbc">
                                 <rect key="frame" x="58" y="48" width="259" height="59"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNk-bP-zHB">
-                                <rect key="frame" x="69" y="364" width="237" height="178"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="AnsPicker" destination="eNk-bP-zHB" id="2sb-mH-uIN"/>
-                        <outlet property="BaemaxQuote3" destination="OVV-RX-Mbc" id="XZP-ZI-NQM"/>
+                        <outlet property="AnsPicker" destination="eNk-bP-zHB" id="g1N-1u-aRo"/>
+                        <outlet property="BaemaxQuote3" destination="OVV-RX-Mbc" id="bxD-fU-jMh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JC6-gl-5Xg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -251,15 +256,12 @@
                                 <rect key="frame" x="58" y="352" width="259" height="258"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLG-hF-fZQ">
-                                <rect key="frame" x="243" y="550" width="41" height="30"/>
+                                <rect key="frame" x="238" y="550" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Home"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="PVP-om-1GF"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="WhM-YF-NYX"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u32-MJ-nAb">
-                                <rect key="frame" x="90" y="550" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here is what I suggest to make you feel better:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXS-kN-dW7">
                                 <rect key="frame" x="58" y="46" width="259" height="59"/>
@@ -267,13 +269,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ac-iz-7DZ">
-                                <rect key="frame" x="90" y="550" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="jPO-c2-Ei7" kind="show" id="2UV-GG-0oo"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mrM-kk-yq7">
                                 <rect key="frame" x="79" y="371" width="217" height="171"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -281,12 +276,20 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ac-iz-7DZ">
+                                <rect key="frame" x="93" y="550" width="43" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="jPO-c2-Ei7" kind="show" id="dhh-F7-akt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="BaemaxQuote4" destination="oXS-kN-dW7" id="DrP-ol-hSn"/>
+                        <outlet property="BaemaxQuote4" destination="oXS-kN-dW7" id="I66-JO-bDd"/>
                         <outlet property="ResultText" destination="mrM-kk-yq7" id="OtR-tw-KCq"/>
                     </connections>
                 </viewController>
@@ -356,19 +359,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsb-gB-Ntg">
-                                <rect key="frame" x="38" y="151" width="163" height="168"/>
-                            </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Stress" translatesAutoresizingMaskIntoConstraints="NO" id="34s-kp-QmI">
                                 <rect key="frame" x="286" y="249" width="51" height="49"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79f-hG-pRX">
-                                <rect key="frame" x="167" y="583" width="41" height="30"/>
-                                <state key="normal" title="Home"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="zg5-28-ZZe"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Happy" translatesAutoresizingMaskIntoConstraints="NO" id="LDq-jo-Zhx">
                                 <rect key="frame" x="286" y="170" width="51" height="49"/>
                             </imageView>
@@ -384,10 +377,93 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sick: %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siD-Bp-IWa">
+                                <rect key="frame" x="54" y="144" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="qfs-7Y-2u7">
+                                <rect key="frame" x="54" y="166" width="125" height="3"/>
+                                <color key="tintColor" red="0.80450994320000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sad: %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-Mf-gZi">
+                                <rect key="frame" x="54" y="170" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="hkz-jA-vph">
+                                <rect key="frame" x="54" y="192" width="125" height="3"/>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stress: %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFj-LG-lVs">
+                                <rect key="frame" x="54" y="198" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ity-De-TDj">
+                                <rect key="frame" x="54" y="221" width="125" height="3"/>
+                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bored: %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3H-Y9-fym">
+                                <rect key="frame" x="54" y="227" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="WtG-3H-2Yt">
+                                <rect key="frame" x="54" y="249" width="125" height="3"/>
+                                <color key="tintColor" red="0.0" green="0.67566044390000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleepy: %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmX-aN-1WC">
+                                <rect key="frame" x="54" y="255" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="wHr-8M-Hlo">
+                                <rect key="frame" x="54" y="279" width="125" height="3"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Happy: %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHO-hP-gaS">
+                                <rect key="frame" x="54" y="284" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZUy-mT-ucG">
+                                <rect key="frame" x="54" y="308" width="125" height="3"/>
+                                <color key="tintColor" red="0.50196081400000003" green="0.18714021380000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79f-hG-pRX">
+                                <rect key="frame" x="161" y="583" width="52" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="PkL-Lg-fXg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="BoredPercent" destination="C3H-Y9-fym" id="f3d-G6-wEh"/>
+                        <outlet property="BoredProgBar" destination="WtG-3H-2Yt" id="VXP-f3-8TJ"/>
+                        <outlet property="DataViewOptions" destination="Oq0-q8-6Ca" id="h61-DS-HXk"/>
+                        <outlet property="HappyPercent" destination="OHO-hP-gaS" id="VuX-GA-cCi"/>
+                        <outlet property="HappyProgBar" destination="ZUy-mT-ucG" id="89k-1X-f5N"/>
+                        <outlet property="IncludeName" destination="KD8-hd-li8" id="lh0-tT-O3D"/>
+                        <outlet property="SadPercent" destination="bZO-Mf-gZi" id="TRP-HU-y12"/>
+                        <outlet property="SadProgBar" destination="hkz-jA-vph" id="H67-VS-H0K"/>
+                        <outlet property="SickPercent" destination="siD-Bp-IWa" id="pOE-sw-Nw1"/>
+                        <outlet property="SickProgBar" destination="qfs-7Y-2u7" id="jNy-Db-aiZ"/>
+                        <outlet property="SleepyPercent" destination="NmX-aN-1WC" id="Acv-fA-bn9"/>
+                        <outlet property="SleepyProgBar" destination="wHr-8M-Hlo" id="h3h-DZ-kfg"/>
+                        <outlet property="StressPercent" destination="zFj-LG-lVs" id="AGh-IF-J4H"/>
+                        <outlet property="StressProgBar" destination="ity-De-TDj" id="U3a-Mn-QEd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbj-Ug-Yic" sceneMemberID="firstResponder"/>
             </objects>
@@ -405,8 +481,8 @@
         <image name="Tummy" width="237" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zg5-28-ZZe"/>
-        <segue reference="jDR-Gd-FZH"/>
-        <segue reference="2UV-GG-0oo"/>
+        <segue reference="dhh-F7-akt"/>
+        <segue reference="PkL-Lg-fXg"/>
+        <segue reference="yHz-9J-IRK"/>
     </inferredMetricsTieBreakers>
 </document>

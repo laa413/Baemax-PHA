@@ -23,15 +23,21 @@ class HomeVC: UIViewController {
     let main = UIApplication.sharedApplication().delegate as! AppDelegate
     
     //The variable for the UILabel for the Baemax quote on this view
-    @IBOutlet weak var BaemaxQuote1: UILabel!
     
+    @IBOutlet weak var BaemaxQuote1: UILabel!
     //The variables for the buttons for the emotions
-    @IBOutlet weak var SickButton: UIButton!
+    
+     @IBOutlet weak var SickButton: UIButton!
+    
     @IBOutlet weak var SadButton: UIButton!
+   
     @IBOutlet weak var StressedButton: UIButton!
+    
     @IBOutlet weak var BoredButton: UIButton!
+   
     @IBOutlet weak var SleepyButton: UIButton!
     @IBOutlet weak var HappyButton: UIButton!
+   
     var currentEmoji: Emotion = Emotion(name: Emoji.Happy, rating: 0, date: NSDate())
     
     override func viewDidLoad() {
@@ -98,47 +104,44 @@ class HomeVC: UIViewController {
 
     
     //performs the actions when the sick option is selected
-    @IBAction func sickButton(sender: UIButton) {
+    
+    @IBAction func sickButton(sender: AnyObject) {
         currentEmoji.name = Emoji.Sick
         currentEmoji.rating = 0
         main.report.append(currentEmoji)
         defaults.setValue("sickness", forKey: "emotion")
+        print(main.report)
     }
     
-    //performs the actions when the sad option is selected
-    @IBAction func sadButton(sender: UIButton) {
+    @IBAction func sadButton(sender: AnyObject) {
         currentEmoji.name = Emoji.Sad
         currentEmoji.rating = 0
         main.report.append(currentEmoji)
         defaults.setValue("sadness", forKey: "emotion")
     }
     
-    //performs the actions when the stress option is selected
-    @IBAction func stressButton(sender: UIButton) {
+    @IBAction func stressButton(sender: AnyObject) {
         currentEmoji.name = Emoji.Stress
         currentEmoji.rating = 0
         main.report.append(currentEmoji)
         defaults.setValue("stress", forKey: "emotion")
     }
     
-    //performs the actions when the bored option is selected
-    @IBAction func boredButton(sender: UIButton) {
+    @IBAction func boredButton(sender: AnyObject) {
         currentEmoji.name = Emoji.Bored
         currentEmoji.rating = 0
         main.report.append(currentEmoji)
         defaults.setValue("boredom", forKey: "emotion")
     }
     
-    //performs the actions when the sleepy option is selected
-    @IBAction func sleepyButton(sender: UIButton) {
+    @IBAction func sleepyButton(sender: AnyObject) {
         currentEmoji.name = Emoji.Sleepy
         currentEmoji.rating = 0
         main.report.append(currentEmoji)
         defaults.setValue("sleepiness", forKey: "emotion")
     }
     
-    //performs the actions when the happy option is selected
-    @IBAction func happyButton(sender: UIButton) {
+    @IBAction func happyButton(sender: AnyObject) {
         currentEmoji.name = Emoji.Happy
         currentEmoji.rating = 0
         main.report.append(currentEmoji)

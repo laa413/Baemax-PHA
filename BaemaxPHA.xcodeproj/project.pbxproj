@@ -12,17 +12,17 @@
 		FB5126911CD0730700543D59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB51268F1CD0730700543D59 /* LaunchScreen.storyboard */; };
 		FB51269C1CD0730800543D59 /* BaemaxPHATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB51269B1CD0730800543D59 /* BaemaxPHATests.swift */; };
 		FB5126A71CD0730800543D59 /* BaemaxPHAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126A61CD0730800543D59 /* BaemaxPHAUITests.swift */; };
-		FB5126C11CD08D2800543D59 /* SettingsStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B41CD08D2800543D59 /* SettingsStatsVC.swift */; };
-		FB5126C21CD08D2800543D59 /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B51CD08D2800543D59 /* QuestionVC.swift */; };
-		FB5126C31CD08D2800543D59 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B61CD08D2800543D59 /* Questions.swift */; };
-		FB5126C41CD08D2800543D59 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B71CD08D2800543D59 /* ResultVC.swift */; };
-		FB5126C51CD08D2800543D59 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B81CD08D2800543D59 /* HomeVC.swift */; };
-		FB5126C61CD08D2800543D59 /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126B91CD08D2800543D59 /* RatingVC.swift */; };
-		FB5126C71CD08D2800543D59 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126BA1CD08D2800543D59 /* Emotion.swift */; };
-		FB5126C81CD08D2800543D59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126BB1CD08D2800543D59 /* AppDelegate.swift */; };
-		FB5126CA1CD08D2800543D59 /* MyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126BD1CD08D2800543D59 /* MyLinkedList.swift */; };
-		FB5126CC1CD08D2800543D59 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5126BF1CD08D2800543D59 /* Node.swift */; };
 		FB5126D11CD096D100543D59 /* QA.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB5126D01CD096D100543D59 /* QA.plist */; };
+		FBF3F8DC1CD5371600EB285C /* SettingsStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8D21CD5371600EB285C /* SettingsStatsVC.swift */; };
+		FBF3F8DD1CD5371600EB285C /* RatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8D31CD5371600EB285C /* RatingVC.swift */; };
+		FBF3F8DE1CD5371600EB285C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8D41CD5371600EB285C /* HomeVC.swift */; };
+		FBF3F8DF1CD5371600EB285C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8D51CD5371600EB285C /* AppDelegate.swift */; };
+		FBF3F8E01CD5371600EB285C /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8D61CD5371600EB285C /* QuestionVC.swift */; };
+		FBF3F8E11CD5371600EB285C /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8D71CD5371600EB285C /* Questions.swift */; };
+		FBF3F8E21CD5371600EB285C /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8D81CD5371600EB285C /* ResultVC.swift */; };
+		FBF3F8E31CD5371600EB285C /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8D91CD5371600EB285C /* Emotion.swift */; };
+		FBF3F8E41CD5371600EB285C /* MyLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8DA1CD5371600EB285C /* MyLinkedList.swift */; };
+		FBF3F8E51CD5371600EB285C /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3F8DB1CD5371600EB285C /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,17 +54,17 @@
 		FB5126A21CD0730800543D59 /* BaemaxPHAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaemaxPHAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5126A61CD0730800543D59 /* BaemaxPHAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaemaxPHAUITests.swift; sourceTree = "<group>"; };
 		FB5126A81CD0730800543D59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB5126B41CD08D2800543D59 /* SettingsStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsStatsVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/SettingsStatsVC.swift"; sourceTree = "<group>"; };
-		FB5126B51CD08D2800543D59 /* QuestionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/QuestionVC.swift"; sourceTree = "<group>"; };
-		FB5126B61CD08D2800543D59 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Questions.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/Questions.swift"; sourceTree = "<group>"; };
-		FB5126B71CD08D2800543D59 /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/ResultVC.swift"; sourceTree = "<group>"; };
-		FB5126B81CD08D2800543D59 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/HomeVC.swift"; sourceTree = "<group>"; };
-		FB5126B91CD08D2800543D59 /* RatingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingVC.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/RatingVC.swift"; sourceTree = "<group>"; };
-		FB5126BA1CD08D2800543D59 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Emotion.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/Emotion.swift"; sourceTree = "<group>"; };
-		FB5126BB1CD08D2800543D59 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/AppDelegate.swift"; sourceTree = "<group>"; };
-		FB5126BD1CD08D2800543D59 /* MyLinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyLinkedList.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/MyLinkedList.swift"; sourceTree = "<group>"; };
-		FB5126BF1CD08D2800543D59 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Node.swift; path = "../../../Documents/BaemaxPHA 2 2/BaemaxPHA/Node.swift"; sourceTree = "<group>"; };
 		FB5126D01CD096D100543D59 /* QA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QA.plist; sourceTree = "<group>"; };
+		FBF3F8D21CD5371600EB285C /* SettingsStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStatsVC.swift; sourceTree = "<group>"; };
+		FBF3F8D31CD5371600EB285C /* RatingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingVC.swift; sourceTree = "<group>"; };
+		FBF3F8D41CD5371600EB285C /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		FBF3F8D51CD5371600EB285C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FBF3F8D61CD5371600EB285C /* QuestionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
+		FBF3F8D71CD5371600EB285C /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		FBF3F8D81CD5371600EB285C /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		FBF3F8D91CD5371600EB285C /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		FBF3F8DA1CD5371600EB285C /* MyLinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLinkedList.swift; sourceTree = "<group>"; };
+		FBF3F8DB1CD5371600EB285C /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,17 +115,17 @@
 		FB5126851CD0730700543D59 /* BaemaxPHA */ = {
 			isa = PBXGroup;
 			children = (
-				FB5126BB1CD08D2800543D59 /* AppDelegate.swift */,
-				FB5126B81CD08D2800543D59 /* HomeVC.swift */,
-				FB5126B91CD08D2800543D59 /* RatingVC.swift */,
-				FB5126B51CD08D2800543D59 /* QuestionVC.swift */,
-				FB5126B61CD08D2800543D59 /* Questions.swift */,
-				FB5126B71CD08D2800543D59 /* ResultVC.swift */,
-				FB5126B41CD08D2800543D59 /* SettingsStatsVC.swift */,
-				FB5126BD1CD08D2800543D59 /* MyLinkedList.swift */,
-				FB5126BF1CD08D2800543D59 /* Node.swift */,
-				FB5126BA1CD08D2800543D59 /* Emotion.swift */,
+				FBF3F8D51CD5371600EB285C /* AppDelegate.swift */,
+				FBF3F8D41CD5371600EB285C /* HomeVC.swift */,
+				FBF3F8D21CD5371600EB285C /* SettingsStatsVC.swift */,
+				FBF3F8D31CD5371600EB285C /* RatingVC.swift */,
+				FBF3F8D61CD5371600EB285C /* QuestionVC.swift */,
+				FBF3F8D71CD5371600EB285C /* Questions.swift */,
 				FB5126D01CD096D100543D59 /* QA.plist */,
+				FBF3F8D81CD5371600EB285C /* ResultVC.swift */,
+				FBF3F8D91CD5371600EB285C /* Emotion.swift */,
+				FBF3F8DA1CD5371600EB285C /* MyLinkedList.swift */,
+				FBF3F8DB1CD5371600EB285C /* Node.swift */,
 				FB51268A1CD0730700543D59 /* Main.storyboard */,
 				FB51268D1CD0730700543D59 /* Assets.xcassets */,
 				FB51268F1CD0730700543D59 /* LaunchScreen.storyboard */,
@@ -287,16 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB5126C21CD08D2800543D59 /* QuestionVC.swift in Sources */,
-				FB5126C41CD08D2800543D59 /* ResultVC.swift in Sources */,
-				FB5126CC1CD08D2800543D59 /* Node.swift in Sources */,
-				FB5126C51CD08D2800543D59 /* HomeVC.swift in Sources */,
-				FB5126CA1CD08D2800543D59 /* MyLinkedList.swift in Sources */,
-				FB5126C71CD08D2800543D59 /* Emotion.swift in Sources */,
-				FB5126C31CD08D2800543D59 /* Questions.swift in Sources */,
-				FB5126C11CD08D2800543D59 /* SettingsStatsVC.swift in Sources */,
-				FB5126C81CD08D2800543D59 /* AppDelegate.swift in Sources */,
-				FB5126C61CD08D2800543D59 /* RatingVC.swift in Sources */,
+				FBF3F8E41CD5371600EB285C /* MyLinkedList.swift in Sources */,
+				FBF3F8E51CD5371600EB285C /* Node.swift in Sources */,
+				FBF3F8DF1CD5371600EB285C /* AppDelegate.swift in Sources */,
+				FBF3F8DE1CD5371600EB285C /* HomeVC.swift in Sources */,
+				FBF3F8DC1CD5371600EB285C /* SettingsStatsVC.swift in Sources */,
+				FBF3F8E31CD5371600EB285C /* Emotion.swift in Sources */,
+				FBF3F8E11CD5371600EB285C /* Questions.swift in Sources */,
+				FBF3F8E21CD5371600EB285C /* ResultVC.swift in Sources */,
+				FBF3F8E01CD5371600EB285C /* QuestionVC.swift in Sources */,
+				FBF3F8DD1CD5371600EB285C /* RatingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,10 +438,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BaemaxPHA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = laa.BaemaxPHA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -449,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BaemaxPHA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = laa.BaemaxPHA;
@@ -521,6 +524,7 @@
 				FB5126AD1CD0730800543D59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB5126AE1CD0730800543D59 /* Build configuration list for PBXNativeTarget "BaemaxPHATests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +533,7 @@
 				FB5126B01CD0730800543D59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB5126B11CD0730800543D59 /* Build configuration list for PBXNativeTarget "BaemaxPHAUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +542,7 @@
 				FB5126B31CD0730800543D59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

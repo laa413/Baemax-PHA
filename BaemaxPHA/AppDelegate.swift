@@ -12,7 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var sickList = MyLinkedList()
+    var sadList = MyLinkedList()
+    var stressList = MyLinkedList()
+    var boredList = MyLinkedList()
+    var sleepyList = MyLinkedList()
+    var happyList = MyLinkedList()
+    var report:[Emotion] = []
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

@@ -24,12 +24,12 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     //Variables for the quote, picker, next button on this view and its connection to UI
     @IBOutlet weak var BaemaxQuote3: UILabel!
     @IBOutlet weak var AnsPicker: UIPickerView!
-    @IBOutlet weak var nextButton: UIButton!
+    
     var Qs = Questions()
     var pickerDataSource = ["", ""]
     let defaults = NSUserDefaults.standardUserDefaults()
     var result: String!
-    var emoji:String!
+    var emoji:Emoji!
     var num: Int!
     var selectedRow: Int!
     
@@ -38,12 +38,13 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         self.AnsPicker.dataSource = self;
         self.AnsPicker.delegate = self;
         generateQandA()
-        let QandA = Qs.determineQandA(defaults.stringForKey("emotion")!, rating: defaults.integerForKey("rating"))
+        main.sickList.printList()
+        let QandA = Qs.determineQandA((main.report.last?.name)!, rating: (main.report.last?.rating)!)
         print(QandA)
         BaemaxQuote3.text = QandA.text
         pickerDataSource = QandA.answerOptions
-        emoji = defaults.stringForKey("emotion")!
-        num = defaults.integerForKey("rating")
+        emoji = (main.report.last?.name)!
+        num = (main.report.last?.rating)!
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -106,19 +107,17 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     //function was given in example code found in link in comment above, but was changed to match the answer that is appropriate for the chosen option in the picker view to the result that will be shown in the next view
     func pickerView(AnsPicker: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        
-        
         //sick
-        if(row == 1 && emoji == "sickness" && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Sick && num >= 1 && num <= 5){
             defaults.setValue("\(String(main.sickList.getItemAt(2)))", forKey: "answer")
             selectedRow = 1
-        }else if(row == 2 && emoji == "sickness" && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Sick && num >= 1 && num <= 5){
             defaults.setValue("\(String(main.sickList.getItemAt(3)))", forKey: "answer")
             selectedRow = 2
-        }else if(row == 1 && emoji == "sickness" && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Sick && num >= 6 && num <= 10){
             defaults.setValue("\(main.sickList.getItemAt(4))", forKey:"answer")
             selectedRow = 1
-        }else if(row == 2 && emoji == "sickness" && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Sick && num >= 6 && num <= 10){
             defaults.setValue("\(main.sickList.getItemAt(2))", forKey:"answer")
             selectedRow = 2
         }else if row == 0 {
@@ -127,15 +126,15 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         }
         var rando:Int! = Int(arc4random_uniform(3))
         //sad
-        if(row == 1 && emoji == "sadness" && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Sad && num >= 1 && num <= 5){
             rando = rando + 2
             defaults.setValue("\(String(main.sadList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 2 && emoji == "sadness" && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Sad && num >= 1 && num <= 5){
              rando = rando + 5
             defaults.setValue("\(String(main.sadList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == "sadness" && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Sad && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.sadList.getItemAt(9)))", forKey:"answer")
-        }else if(row == 2 && emoji == "sadness" && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Sad && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.sadList.getItemAt(8)))", forKey:"answer")
         }else if row == 0 {
             nothingSelected()
@@ -143,15 +142,15 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         }
         
         //stressed
-        if(row == 1 && emoji == "stress" && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Stress && num >= 1 && num <= 5){
             rando = rando + 2
             defaults.setValue("\(String(main.stressList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 2 && emoji == "stress" && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Stress && num >= 1 && num <= 5){
             rando = rando + 5
             defaults.setValue("\(String(main.stressList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == "stress" && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Stress && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.stressList.getItemAt(9)))", forKey:"answer")
-        }else if(row == 2 && emoji == "stress" && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Stress && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.stressList.getItemAt(8)))", forKey:"answer")
         }else if row == 0 {
             nothingSelected()
@@ -159,16 +158,16 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         }
         
         //bored
-        if(row == 1 && emoji == "boredom" && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Bored && num >= 1 && num <= 5){
             rando = Int(arc4random_uniform(2)) + 1
             defaults.setValue("\(String(main.boredList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 2 && emoji == "boredom" && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Bored && num >= 1 && num <= 5){
             rando = Int(arc4random_uniform(2)) + 3
             defaults.setValue("\(String(main.boredList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == "boredom" && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Bored && num >= 6 && num <= 10){
             rando = Int(arc4random_uniform(2)) + 1
             defaults.setValue("\(String(main.boredList.getItemAt(rando)))", forKey:"answer")
-        }else if(row == 2 && emoji == "boredom" && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Bored && num >= 6 && num <= 10){
             rando = Int(arc4random_uniform(2)) + 3
             defaults.setValue("\(String(main.boredList.getItemAt(rando)))", forKey:"answer")
         }else if row == 0 {
@@ -177,14 +176,14 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         }
         
         //sleepy
-        if(row == 1 && emoji == "sleepiness" && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Sleepy && num >= 1 && num <= 5){
             defaults.setValue("\(String(main.sleepyList.getItemAt(2)))", forKey: "answer")
-        }else if(row == 2 && emoji == "sleepiness" && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Sleepy && num >= 1 && num <= 5){
             rando = Int(arc4random_uniform(6)) + 3
             defaults.setValue("\(String(main.sleepyList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == "sleepiness" && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Sleepy && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.sleepyList.getItemAt(11)))", forKey:"answer")
-        }else if(row == 2 && emoji == "sleepiness" && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Sleepy && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.sleepyList.getItemAt(10)))", forKey:"answer")
         }else if row == 0 {
             nothingSelected()
@@ -192,14 +191,14 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         }
         
         //happy
-        if(row == 1 && emoji == "happiness" && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Happy && num >= 1 && num <= 5){
             defaults.setValue("\(String(main.happyList.getItemAt(1)))", forKey: "answer")
-        }else if(row == 2 && emoji == "happiness" && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Happy && num >= 1 && num <= 5){
             rando = Int(arc4random_uniform(6)) + 2
             defaults.setValue("\(String(main.happyList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == "happiness" && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Happy && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.happyList.getItemAt(1)))", forKey:"answer")
-        }else if(row == 2 && emoji == "happiness" && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Happy && num >= 6 && num <= 10){
             rando = Int(arc4random_uniform(6)) + 2
             defaults.setValue("\(String(main.happyList.getItemAt(rando)))", forKey:"answer")
         }else if row == 0 {
@@ -216,6 +215,6 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
-        defaults.setValue("No answer was selecte please go back and select an answer", forKey:"answer")
+        defaults.setValue("No answer was selected please go back and select an answer", forKey:"answer")
     }
 }

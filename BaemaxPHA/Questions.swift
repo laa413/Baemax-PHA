@@ -13,11 +13,11 @@ class Questions{
     init(){}
     let main = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    func determineQandA(emotion:String, rating: Int) -> (text:String, answerOptions:[String]){
+    func determineQandA(emotion:Emoji, rating: Int) -> (text:String, answerOptions:[String]){
         var tempText:String = ""
         var tempAnswerOptions:[String] = ["Select Answer","",""]
         switch emotion{
-        case "sickness":
+        case Emoji.Sick:
             if (rating >= 1 && rating <= 5){
                 tempText = "\(main.sickList.getItemAt(0))"
             }else if (rating >= 6 && rating <= 10){
@@ -25,7 +25,7 @@ class Questions{
             }
             tempAnswerOptions = ["Select Answer","Yes", "No"]
             break
-        case "sadness":
+        case Emoji.Sad:
             if (rating >= 1 && rating <= 5){
                 tempText = "\(main.sadList.getItemAt(0))"
                 tempAnswerOptions = ["Select Answer","Video", "Quote"]
@@ -34,7 +34,7 @@ class Questions{
                 tempAnswerOptions = ["Select Answer","Yes", "No"]
             }
             break
-        case "stress":
+        case Emoji.Stress:
             if (rating >= 1 && rating <= 5){
                 tempText = "\(main.stressList.getItemAt(0))"
                 tempAnswerOptions = ["Select Answer","Image/Video", "Quote/Joke"]
@@ -43,7 +43,7 @@ class Questions{
                 tempAnswerOptions = ["Select Answer","Yes", "No"]
             }
             break
-        case "boredom":
+        case Emoji.Bored:
             if (rating >= 1 && rating <= 5){
                 tempText = "\(main.boredList.getItemAt(0))"
             }else if (rating >= 6 && rating <= 10){
@@ -51,7 +51,7 @@ class Questions{
             }
             tempAnswerOptions = ["Select Answer","Joke", "Video/Images"]
             break
-        case "sleepiness":
+        case Emoji.Sleepy:
             if (rating >= 1 && rating <= 5){
                 tempText = "\(main.sleepyList.getItemAt(0))"
             }else if (rating >= 6 && rating <= 10){
@@ -59,12 +59,11 @@ class Questions{
             }
             tempAnswerOptions = ["Select Answer","Yes", "No"]
             break
-        case "happiness":
+        case Emoji.Happy:
             if (rating >= 1 && rating <= 5){
                 tempText = "\(main.happyList.getItemAt(0))"
             }else if (rating >= 6 && rating <= 10){
                 tempText = "\(main.happyList.getItemAt(0))"
-                
             }
             tempAnswerOptions = ["Select Answer","Image/Video", "Movie Quote"]
             break

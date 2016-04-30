@@ -20,12 +20,12 @@ import UIKit
 class RatingVC: UIViewController {
     //lets the class access variables that have been declared in the AppDelegate
     let main = UIApplication.sharedApplication().delegate as! AppDelegate
-    //Variables for the quote, slider, and rating on this view and its connection to UI
-    //@IBOutlet weak var BaemaxQuote2: UILabel!
-    //@IBOutlet weak var PainSlider: UISlider!
-    //@IBOutlet weak var ratingValue: UILabel!
     let defaults = NSUserDefaults.standardUserDefaults()
+    //Variables for the quote, slider, and rating on this view and its connection to UI
     
+    @IBOutlet weak var BaemaxQuote2: UILabel!
+    @IBOutlet weak var ratingSlider: UISlider!
+    @IBOutlet weak var ratingValue: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,11 +41,11 @@ class RatingVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         BaemaxQuote2.text = "On a scale of 1 - 10 how would you rate your \(defaults.stringForKey("emotion")!)?"
     }
-   
+    
     //controlls the change in value of the rating with the slider
-    @IBAction func ratingChange(sender: UISlider) {
-        defaults.setValue(sender.value, forKey: "rating")
+    
+    @IBAction func ratingChanged(sender: UISlider) {
         main.report[main.report.count-1].rating = Int(sender.value)
-        ratingValue.text = "\(Int(defaults.integerForKey("rating")))"
+        ratingValue.text = "\(main.report[main.report.count-1].rating)"
     }
 }
