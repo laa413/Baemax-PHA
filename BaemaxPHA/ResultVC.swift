@@ -30,12 +30,44 @@ class ResultVC: UIViewController {
         super.viewDidLoad()
         //sets the text of the text view to the value that was determined in the previous view
         ResultText.text = "\(defaults.stringForKey("answer")!)"
-        defaults.setValue("No answer was selecte please go back and select an answer", forKey:"answer")
+        defaults.setValue("No answer was selected please go back and select an answer", forKey:"answer")
+        
+        //defaults.setObject(main.saved, forKey: "savedReports")
+        defaults.synchronize()
+        print("user default: \(defaults.objectForKey("savedReports") as? [[String]] ?? [[String]]())")
+        
+        //makes obj
+        //var me = Emotion(newName: .Sick, newRating: 20, newDate: NSDate())
+        
+        //makes object into array
+        //var storeMe = me.toArray()
+        
+        //makes object from array again
+        //var meAgain = Emotion(inputArray: storeMe)
+        
+        
+        /*for(var i = 0; i < array.count; i += 1){
+         //var emotions = Emotion(inputArray: testArray)
+         //var sortedarray:[Emotion] = []
+         //sortedarray.append(emotions)
+         //print(emotions)
+         //print(sortedarray)
+         
+         var variable = array[0][1]
+         let dateFormatter = NSDateFormatter()
+         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss zzz"
+         var day = dateFormatter.dateFromString(array[0][2])
+         
+         //sortedarray.append(Emotion(newName: Emoji(rawValue: array[0][0])!, newRating: Int(variable)!, newDate: day!))
+         //sortedarray.append(Emotion(newName: Emoji(rawValue: array[0][0])!, newRating: Int(variable)!, newDate: day!))
+         //print(sortedarray)
+         }*/
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }

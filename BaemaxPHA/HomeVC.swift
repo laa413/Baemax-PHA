@@ -21,35 +21,33 @@ import UIKit
 class HomeVC: UIViewController {
     //lets the class access variables that have been declared in the AppDelegate
     let main = UIApplication.sharedApplication().delegate as! AppDelegate
+    //var savedReports:[[String]] = []
     
     //The variable for the UILabel for the Baemax quote on this view
-    
     @IBOutlet weak var BaemaxQuote1: UILabel!
+    
     //The variables for the buttons for the emotions
-    
-     @IBOutlet weak var SickButton: UIButton!
-    
+    @IBOutlet weak var SickButton: UIButton!
     @IBOutlet weak var SadButton: UIButton!
-   
     @IBOutlet weak var StressedButton: UIButton!
-    
     @IBOutlet weak var BoredButton: UIButton!
-   
     @IBOutlet weak var SleepyButton: UIButton!
     @IBOutlet weak var HappyButton: UIButton!
-   
-    var currentEmoji: Emotion = Emotion(name: Emoji.Happy, rating: 0, date: NSDate())
+    
+    var currentEmoji: Emotion = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate(), newCompare: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //print(defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]())
+        defaults.synchronize()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     //system defaults for use with saving user's info
     let defaults = NSUserDefaults.standardUserDefaults()
     
@@ -100,51 +98,109 @@ class HomeVC: UIViewController {
             BaemaxQuote1.text = "Hello \(defaults.stringForKey("userName")!)! How are you feeling today?"
             //BaemaxQuote1.text = "hello"
         }
+        defaults.setObject(main.saved, forKey: "savedReports")
     }
-
+    
     
     //performs the actions when the sick option is selected
-    
     @IBAction func sickButton(sender: AnyObject) {
-        currentEmoji.name = Emoji.Sick
-        currentEmoji.rating = 0
-        main.report.append(currentEmoji)
+        currentEmoji = Emotion(newName: Emoji.Sick, newRating: 0, newDate: NSDate(), newCompare: 1)
+        
+        if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == main.saved {
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        } else {
+            main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        }
+        
         defaults.setValue("sickness", forKey: "emotion")
-        print(main.report)
+        defaults.synchronize()
     }
     
     @IBAction func sadButton(sender: AnyObject) {
-        currentEmoji.name = Emoji.Sad
-        currentEmoji.rating = 0
-        main.report.append(currentEmoji)
+        currentEmoji = Emotion(newName: Emoji.Sad, newRating: 0, newDate: NSDate(), newCompare: 2)
+        
+        if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        } else {
+            main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        }
         defaults.setValue("sadness", forKey: "emotion")
+        
+        defaults.synchronize()
     }
     
     @IBAction func stressButton(sender: AnyObject) {
-        currentEmoji.name = Emoji.Stress
-        currentEmoji.rating = 0
-        main.report.append(currentEmoji)
+        currentEmoji = Emotion(newName: Emoji.Stress, newRating: 0, newDate: NSDate(), newCompare: 3)
+        
+        if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        } else {
+            main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        }
+        
         defaults.setValue("stress", forKey: "emotion")
+        
+        defaults.synchronize()
     }
     
     @IBAction func boredButton(sender: AnyObject) {
-        currentEmoji.name = Emoji.Bored
-        currentEmoji.rating = 0
-        main.report.append(currentEmoji)
+        currentEmoji = Emotion(newName: Emoji.Bored, newRating: 0, newDate: NSDate(), newCompare: 4)
+        
+        if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        } else {
+            main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        }
+        
         defaults.setValue("boredom", forKey: "emotion")
+        
+        defaults.synchronize()
     }
     
     @IBAction func sleepyButton(sender: AnyObject) {
-        currentEmoji.name = Emoji.Sleepy
-        currentEmoji.rating = 0
-        main.report.append(currentEmoji)
+        currentEmoji = Emotion(newName: Emoji.Sleepy, newRating: 0, newDate: NSDate(), newCompare: 5)
+        
+        if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        } else {
+            main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        }
+        
         defaults.setValue("sleepiness", forKey: "emotion")
+        
+        defaults.synchronize()
     }
     
     @IBAction func happyButton(sender: AnyObject) {
-        currentEmoji.name = Emoji.Happy
-        currentEmoji.rating = 0
-        main.report.append(currentEmoji)
+        currentEmoji = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate(), newCompare: 6)
+        main.saved.append(currentEmoji.toArray())
+        
+        if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        } else {
+            main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+            main.saved.append(currentEmoji.toArray())
+            defaults.setObject(main.saved, forKey: "savedReports")
+        }
+        
         defaults.setValue("happiness", forKey: "emotion")
+        
+        defaults.synchronize()
     }
 }

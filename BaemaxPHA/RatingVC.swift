@@ -21,11 +21,14 @@ class RatingVC: UIViewController {
     //lets the class access variables that have been declared in the AppDelegate
     let main = UIApplication.sharedApplication().delegate as! AppDelegate
     let defaults = NSUserDefaults.standardUserDefaults()
-    //Variables for the quote, slider, and rating on this view and its connection to UI
     
+    //Variables for the quote, slider, and rating on this view and its connection to UI
     @IBOutlet weak var BaemaxQuote2: UILabel!
     @IBOutlet weak var ratingSlider: UISlider!
     @IBOutlet weak var ratingValue: UILabel!
+    
+    var savedArray:[[String]] = [[]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -43,9 +46,8 @@ class RatingVC: UIViewController {
     }
     
     //controlls the change in value of the rating with the slider
-    
     @IBAction func ratingChanged(sender: UISlider) {
-        main.report[main.report.count-1].rating = Int(sender.value)
-        ratingValue.text = "\(main.report[main.report.count-1].rating)"
+        main.saved[main.saved.count-1][1] = String(Int(sender.value))
+        ratingValue.text = "\(String(Int(sender.value)))"
     }
 }

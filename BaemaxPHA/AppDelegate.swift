@@ -18,10 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var boredList = MyLinkedList()
     var sleepyList = MyLinkedList()
     var happyList = MyLinkedList()
-    var report:[Emotion] = []
+    var saved:[[String]] = []
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        defaults.synchronize()
         return true
     }
 
@@ -49,4 +52,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

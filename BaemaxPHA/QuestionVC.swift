@@ -29,7 +29,7 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     var pickerDataSource = ["", ""]
     let defaults = NSUserDefaults.standardUserDefaults()
     var result: String!
-    var emoji:Emoji!
+    var emoji:Emoji.RawValue!
     var num: Int!
     var selectedRow: Int!
     
@@ -37,14 +37,20 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         super.viewDidLoad()
         self.AnsPicker.dataSource = self;
         self.AnsPicker.delegate = self;
+        
         generateQandA()
-        main.sickList.printList()
-        let QandA = Qs.determineQandA((main.report.last?.name)!, rating: (main.report.last?.rating)!)
-        print(QandA)
+        
+        defaults.synchronize()
+        //main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+        defaults.setObject(main.saved, forKey: "savedReports")
+        //print("main.saved:  \(main.saved)")
+        defaults.synchronize()
+        
+        emoji = main.saved[main.saved.count-1][0]
+        num = Int(main.saved[main.saved.count-1][1])
+        let QandA = Qs.determineQandA(Emoji(rawValue: emoji)!, rating: num)
         BaemaxQuote3.text = QandA.text
         pickerDataSource = QandA.answerOptions
-        emoji = (main.report.last?.name)!
-        num = (main.report.last?.rating)!
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -61,11 +67,11 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         var READIN:[String] = []
         
         READIN = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("QA", ofType: "plist")!) as! [String]
-       
+        
         for (var i=0; i<5; i++){
             main.sickList.addItem(READIN[i])
         }
-        print(main.sickList.getItemAt(2))
+        
         for (var i=5; i<15; i++){
             main.sadList.addItem(READIN[i])
         }
@@ -73,15 +79,15 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         for (var i=15; i<25; i++){
             main.stressList.addItem(READIN[i])
         }
-
+        
         for (var i=25; i<30; i++){
             main.boredList.addItem(READIN[i])
         }
-
+        
         for (var i=30; i<42; i++){
             main.sleepyList.addItem(READIN[i])
         }
-
+        
         for (var i=42; i<51; i++){
             main.happyList.addItem(READIN[i])
         }
@@ -108,107 +114,102 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     func pickerView(AnsPicker: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         //sick
-        if(row == 1 && emoji == Emoji.Sick && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Sick.rawValue && num >= 1 && num <= 5){
             defaults.setValue("\(String(main.sickList.getItemAt(2)))", forKey: "answer")
             selectedRow = 1
-        }else if(row == 2 && emoji == Emoji.Sick && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Sick.rawValue && num >= 1 && num <= 5){
             defaults.setValue("\(String(main.sickList.getItemAt(3)))", forKey: "answer")
             selectedRow = 2
-        }else if(row == 1 && emoji == Emoji.Sick && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Sick.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(main.sickList.getItemAt(4))", forKey:"answer")
             selectedRow = 1
-        }else if(row == 2 && emoji == Emoji.Sick && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Sick.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(main.sickList.getItemAt(2))", forKey:"answer")
             selectedRow = 2
         }else if row == 0 {
             nothingSelected()
-            //defaults.setValue("No answer was selecte please go back and select an answer", forKey:"answer")
         }
+        
         var rando:Int! = Int(arc4random_uniform(3))
         //sad
-        if(row == 1 && emoji == Emoji.Sad && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Sad.rawValue && num >= 1 && num <= 5){
             rando = rando + 2
             defaults.setValue("\(String(main.sadList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 2 && emoji == Emoji.Sad && num >= 1 && num <= 5){
-             rando = rando + 5
+        }else if(row == 2 && emoji == Emoji.Sad.rawValue && num >= 1 && num <= 5){
+            rando = rando + 5
             defaults.setValue("\(String(main.sadList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == Emoji.Sad && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Sad.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.sadList.getItemAt(9)))", forKey:"answer")
-        }else if(row == 2 && emoji == Emoji.Sad && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Sad.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.sadList.getItemAt(8)))", forKey:"answer")
         }else if row == 0 {
             nothingSelected()
-            //defaults.setValue("No answer was selecte please go back and select an answer", forKey:"answer")
         }
         
         //stressed
-        if(row == 1 && emoji == Emoji.Stress && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Stress.rawValue && num >= 1 && num <= 5){
             rando = rando + 2
             defaults.setValue("\(String(main.stressList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 2 && emoji == Emoji.Stress && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Stress.rawValue && num >= 1 && num <= 5){
             rando = rando + 5
             defaults.setValue("\(String(main.stressList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == Emoji.Stress && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Stress.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.stressList.getItemAt(9)))", forKey:"answer")
-        }else if(row == 2 && emoji == Emoji.Stress && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Stress.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.stressList.getItemAt(8)))", forKey:"answer")
         }else if row == 0 {
             nothingSelected()
-            //defaults.setValue("No answer was selecte please go back and select an answer", forKey:"answer")
         }
         
         //bored
-        if(row == 1 && emoji == Emoji.Bored && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Bored.rawValue && num >= 1 && num <= 5){
             rando = Int(arc4random_uniform(2)) + 1
             defaults.setValue("\(String(main.boredList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 2 && emoji == Emoji.Bored && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Bored.rawValue && num >= 1 && num <= 5){
             rando = Int(arc4random_uniform(2)) + 3
             defaults.setValue("\(String(main.boredList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == Emoji.Bored && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Bored.rawValue && num >= 6 && num <= 10){
             rando = Int(arc4random_uniform(2)) + 1
             defaults.setValue("\(String(main.boredList.getItemAt(rando)))", forKey:"answer")
-        }else if(row == 2 && emoji == Emoji.Bored && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Bored.rawValue && num >= 6 && num <= 10){
             rando = Int(arc4random_uniform(2)) + 3
             defaults.setValue("\(String(main.boredList.getItemAt(rando)))", forKey:"answer")
         }else if row == 0 {
             nothingSelected()
-            //defaults.setValue("No answer was selecte please go back and select an answer", forKey:"answer")
         }
         
         //sleepy
-        if(row == 1 && emoji == Emoji.Sleepy && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Sleepy.rawValue && num >= 1 && num <= 5){
             defaults.setValue("\(String(main.sleepyList.getItemAt(2)))", forKey: "answer")
-        }else if(row == 2 && emoji == Emoji.Sleepy && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Sleepy.rawValue && num >= 1 && num <= 5){
             rando = Int(arc4random_uniform(6)) + 3
             defaults.setValue("\(String(main.sleepyList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == Emoji.Sleepy && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Sleepy.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.sleepyList.getItemAt(11)))", forKey:"answer")
-        }else if(row == 2 && emoji == Emoji.Sleepy && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Sleepy.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.sleepyList.getItemAt(10)))", forKey:"answer")
         }else if row == 0 {
             nothingSelected()
-            //defaults.setValue("No answer was selecte please go back and select an answer", forKey:"answer")
         }
         
         //happy
-        if(row == 1 && emoji == Emoji.Happy && num >= 1 && num <= 5){
+        if(row == 1 && emoji == Emoji.Happy.rawValue && num >= 1 && num <= 5){
             defaults.setValue("\(String(main.happyList.getItemAt(1)))", forKey: "answer")
-        }else if(row == 2 && emoji == Emoji.Happy && num >= 1 && num <= 5){
+        }else if(row == 2 && emoji == Emoji.Happy.rawValue && num >= 1 && num <= 5){
             rando = Int(arc4random_uniform(6)) + 2
             defaults.setValue("\(String(main.happyList.getItemAt(rando)))", forKey: "answer")
-        }else if(row == 1 && emoji == Emoji.Happy && num >= 6 && num <= 10){
+        }else if(row == 1 && emoji == Emoji.Happy.rawValue && num >= 6 && num <= 10){
             defaults.setValue("\(String(main.happyList.getItemAt(1)))", forKey:"answer")
-        }else if(row == 2 && emoji == Emoji.Happy && num >= 6 && num <= 10){
+        }else if(row == 2 && emoji == Emoji.Happy.rawValue && num >= 6 && num <= 10){
             rando = Int(arc4random_uniform(6)) + 2
             defaults.setValue("\(String(main.happyList.getItemAt(rando)))", forKey:"answer")
         }else if row == 0 {
             nothingSelected()
-            //defaults.setValue("No answer was selecte please go back and select an answer", forKey:"answer")
         }
         rando = 0
     }
     
-   func nothingSelected() {
+    func nothingSelected() {
         
         let alertController = UIAlertController(title: "Answer needed", message:
             "Select one of the given answers", preferredStyle: UIAlertControllerStyle.Alert)
