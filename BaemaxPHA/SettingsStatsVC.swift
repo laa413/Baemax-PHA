@@ -52,7 +52,7 @@ class SettingsStatsVC: UIViewController {
     var happyCount:Float = 0
     
     var sortedArrayString: [[String]] = []
-    //var sortedArrayObject:[Emotion] = []
+    var sortedArrayObject:[Emotion] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +65,9 @@ class SettingsStatsVC: UIViewController {
         BoredProgBar.transform = CGAffineTransformScale(BoredProgBar.transform, 1, 3)
         SleepyProgBar.transform = CGAffineTransformScale(SleepyProgBar.transform, 1, 3)
         HappyProgBar.transform = CGAffineTransformScale(HappyProgBar.transform, 1, 3)
+        
+        //GETTER
+        print(defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]())
         
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
             defaults.setValue(0.0, forKey:"sickPercent")
@@ -85,17 +88,17 @@ class SettingsStatsVC: UIViewController {
         } else {
             calcPercent()
         }
+
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         for var i = 0; i<sortedArrayString.count; i++ {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss ZZZ"
-            let day = dateFormatter.dateFromString(sortedArrayString[i][2])
-            //print(day)
-            //print(sortedArrayString[i])
+        
+            let dateString = dateFormatter.dateFromString(sortedArrayString[i][2])
             
-            //var emotionElement: Emotion = Emotion(newName: Emoji(rawValue: sortedArrayString[i][0])!, newRating: Int(sortedArrayString[i][1])!, newDate: (day)!, newCompare: Int(sortedArrayString[i][3])!)
+            var emotionElement: Emotion = Emotion(newName: Emoji(rawValue: sortedArrayString[i][0])!, newRating: Int(sortedArrayString[i][1])!, newDate: (dateString)!, newCompare: Int(sortedArrayString[i][3])!)
             
-            //sortedArrayObject.append(emotionElement)
+            sortedArrayObject.append(emotionElement)
             
         }
         

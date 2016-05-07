@@ -36,9 +36,16 @@ class HomeVC: UIViewController {
     
     var currentEmoji: Emotion = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate(), newCompare: 0)
     
+    //system defaults for use with saving user's info
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+        if defaults.objectForKey("savedReports") as? [[String]] ?? [[String]]() != [] {
+            main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+        }
         //print(defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]())
         defaults.synchronize()
     }
@@ -47,9 +54,6 @@ class HomeVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //system defaults for use with saving user's info
-    let defaults = NSUserDefaults.standardUserDefaults()
     
     //if it is the first time for the user opening the app, then there will be an alert asking for the name
     func askName()
@@ -104,7 +108,7 @@ class HomeVC: UIViewController {
     
     //performs the actions when the sick option is selected
     @IBAction func sickButton(sender: AnyObject) {
-        currentEmoji = Emotion(newName: Emoji.Sick, newRating: 0, newDate: NSDate(), newCompare: 1)
+        currentEmoji = Emotion(newName: Emoji.Sick, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 1)
         
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == main.saved {
             main.saved.append(currentEmoji.toArray())
@@ -120,7 +124,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func sadButton(sender: AnyObject) {
-        currentEmoji = Emotion(newName: Emoji.Sad, newRating: 0, newDate: NSDate(), newCompare: 2)
+        currentEmoji = Emotion(newName: Emoji.Sad, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 2)
         
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
             main.saved.append(currentEmoji.toArray())
@@ -136,7 +140,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func stressButton(sender: AnyObject) {
-        currentEmoji = Emotion(newName: Emoji.Stress, newRating: 0, newDate: NSDate(), newCompare: 3)
+        currentEmoji = Emotion(newName: Emoji.Stress, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 3)
         
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
             main.saved.append(currentEmoji.toArray())
@@ -153,7 +157,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func boredButton(sender: AnyObject) {
-        currentEmoji = Emotion(newName: Emoji.Bored, newRating: 0, newDate: NSDate(), newCompare: 4)
+        currentEmoji = Emotion(newName: Emoji.Bored, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 4)
         
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
             main.saved.append(currentEmoji.toArray())
@@ -170,7 +174,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func sleepyButton(sender: AnyObject) {
-        currentEmoji = Emotion(newName: Emoji.Sleepy, newRating: 0, newDate: NSDate(), newCompare: 5)
+        currentEmoji = Emotion(newName: Emoji.Sleepy, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 5)
         
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
             main.saved.append(currentEmoji.toArray())
@@ -187,7 +191,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func happyButton(sender: AnyObject) {
-        currentEmoji = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate(), newCompare: 6)
+        currentEmoji = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 6)
         main.saved.append(currentEmoji.toArray())
         
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {

@@ -13,6 +13,7 @@ struct Emotion: CustomStringConvertible {
     var date: NSDate!
     var compare: Int!
     
+
     init(newName:Emoji, newRating:Int, newDate:NSDate, newCompare: Int)
     {
         name = newName
@@ -49,7 +50,11 @@ struct Emotion: CustomStringConvertible {
     
     
     func toArray() -> [String] {
-        return [name.rawValue, "\(rating)", date.description, "\(compare)"]
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        return [name.rawValue, "\(rating)", dateFormatter.stringFromDate(date), "\(compare)"]
+        
     }
     
     // Implement to support 'CustomStringConvertible'. Basically toString()

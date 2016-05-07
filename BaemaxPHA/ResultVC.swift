@@ -32,8 +32,10 @@ class ResultVC: UIViewController {
         ResultText.text = "\(defaults.stringForKey("answer")!)"
         defaults.setValue("No answer was selected please go back and select an answer", forKey:"answer")
         
-        //defaults.setObject(main.saved, forKey: "savedReports")
+        var savedArray = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+        defaults.setObject(savedArray, forKey: "savedReports")
         defaults.synchronize()
+        
         print("user default: \(defaults.objectForKey("savedReports") as? [[String]] ?? [[String]]())")
         
         //makes obj
