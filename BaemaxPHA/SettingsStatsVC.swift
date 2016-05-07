@@ -65,6 +65,7 @@ class SettingsStatsVC: UIViewController {
         //saves the current list of emotions previoulsy entered as the array
         sortedArrayString = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
 
+        IncludeName.addTarget(self, action: #selector(SettingsStatsVC.nameGreeting(_:)), forControlEvents: UIControlEvents.ValueChanged)
         //makes the progress bars thicker so they are more visible on the UI
         SickProgBar.transform = CGAffineTransformScale(SickProgBar.transform, 1, 3)
         SadProgBar.transform = CGAffineTransformScale(SadProgBar.transform, 1, 3)
@@ -225,13 +226,19 @@ class SettingsStatsVC: UIViewController {
         quicksort_swift(&sortedArrayObject, start: r + 1, end: end)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        IncludeName.on = main.nameInGreeting
+    }
+    
     //function for removing the name from the greeting on the home screen if the user wants
     @IBAction func nameGreeting(sender: UISwitch) {
         if sender.on == false {
             main.nameInGreeting = false
+            sender.setOn(false, animated:true)
         }
         if sender.on == true {
             main.nameInGreeting = true
+            sender.setOn(true, animated:true)
         }
     }
 }
