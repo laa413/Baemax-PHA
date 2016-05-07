@@ -66,9 +66,6 @@ class SettingsStatsVC: UIViewController {
         SleepyProgBar.transform = CGAffineTransformScale(SleepyProgBar.transform, 1, 3)
         HappyProgBar.transform = CGAffineTransformScale(HappyProgBar.transform, 1, 3)
         
-        //GETTER
-        print(defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]())
-        
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
             defaults.setValue(0.0, forKey:"sickPercent")
             defaults.setValue(0.0, forKey:"sadPercent")
@@ -99,11 +96,9 @@ class SettingsStatsVC: UIViewController {
             var emotionElement: Emotion = Emotion(newName: Emoji(rawValue: sortedArrayString[i][0])!, newRating: Int(sortedArrayString[i][1])!, newDate: (dateString)!, newCompare: Int(sortedArrayString[i][3])!)
             
             sortedArrayObject.append(emotionElement)
-            
         }
         
-        //quicksort_swift(&sortedArrayObject, start: sortedArrayObject.startIndex, end: sortedArrayObject.endIndex)
-        //print(sortedArrayObject)
+        quicksort_swift(&sortedArrayObject, start: sortedArrayObject.startIndex, end: sortedArrayObject.endIndex)
     }
     
     override func didReceiveMemoryWarning() {
@@ -143,6 +138,38 @@ class SettingsStatsVC: UIViewController {
             defaults.setValue(sleepyCount/Float(main.saved.count), forKey:"sleepyPercent")
             defaults.setValue(happyCount/Float(main.saved.count), forKey:"happyPercent")
             defaults.synchronize()
+            
+            defaults.floatForKey("sickPercent")
+
+            
+            if defaults.floatForKey("sickPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("happyPercent") {
+               
+                overallAvg.image = UIImage(named: "Sick")
+                
+            }else if defaults.floatForKey("sadPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("happyPercent") {
+                
+                overallAvg.image = UIImage(named: "Sad")
+                
+            }else if defaults.floatForKey("stressPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("stressPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("stressPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("stressPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("stressPercent") > defaults.floatForKey("happyPercent") {
+                
+                overallAvg.image = UIImage(named: "Stress")
+                
+            }else if defaults.floatForKey("boredPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("boredPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("boredPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("boredPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("boredPercent") > defaults.floatForKey("happyPercent") {
+                
+                overallAvg.image = UIImage(named: "Bored")
+                
+            }else if defaults.floatForKey("sleepyPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("sleepyPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("sleepyPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("sleepyPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("sleepyPercent") > defaults.floatForKey("happyPercent") {
+                
+                overallAvg.image = UIImage(named: "Tired")
+                
+            }else if defaults.floatForKey("happyPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("happyPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("happyPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("happyPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("happyPercent") > defaults.floatForKey("sleepyPercent") {
+                
+                overallAvg.image = UIImage(named: "Happy")
+                
+            }else{
+                overallAvg.image = UIImage(named: "Tie")
+            }
+ 
         }
         
         

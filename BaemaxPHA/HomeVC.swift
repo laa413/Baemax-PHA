@@ -46,7 +46,6 @@ class HomeVC: UIViewController {
         if defaults.objectForKey("savedReports") as? [[String]] ?? [[String]]() != [] {
             main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
         }
-        //print(defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]())
         defaults.synchronize()
     }
     
@@ -100,7 +99,6 @@ class HomeVC: UIViewController {
         }
         else {
             BaemaxQuote1.text = "Hello \(defaults.stringForKey("userName")!)! How are you feeling today?"
-            //BaemaxQuote1.text = "hello"
         }
         defaults.setObject(main.saved, forKey: "savedReports")
     }
