@@ -27,12 +27,9 @@ class RatingVC: UIViewController {
     @IBOutlet weak var ratingSlider: UISlider!
     @IBOutlet weak var ratingValue: UILabel!
     
-    var savedArray:[[String]] = [[]]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
     
     override func didReceiveMemoryWarning() {

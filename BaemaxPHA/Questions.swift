@@ -13,6 +13,7 @@ class Questions{
     init(){}
     let main = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    //sets the appropriate values in the quote and the picker view for each corresponding combination of emotions and ratings
     func determineQandA(emotion:Emoji, rating: Int) -> (text:String, answerOptions:[String]){
         var tempText:String = ""
         var tempAnswerOptions:[String] = ["Select Answer","",""]

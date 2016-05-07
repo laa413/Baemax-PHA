@@ -320,6 +320,9 @@
                             </imageView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KD8-hd-li8">
                                 <rect key="frame" x="266" y="508" width="51" height="31"/>
+                                <connections>
+                                    <action selector="nameGreeting:" destination="SbV-Z9-hHb" eventType="valueChanged" id="1oh-vD-IGm"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79f-hG-pRX">
                                 <rect key="frame" x="165" y="579" width="44" height="30"/>
@@ -469,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbj-Ug-Yic" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412.5" y="1172.5"/>
+            <point key="canvasLocation" x="244.5" y="1186.5"/>
         </scene>
     </scenes>
     <resources>

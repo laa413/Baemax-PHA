@@ -34,15 +34,19 @@ class HomeVC: UIViewController {
     @IBOutlet weak var SleepyButton: UIButton!
     @IBOutlet weak var HappyButton: UIButton!
     
+    //the current emotion being entered
     var currentEmoji: Emotion = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate(), newCompare: 0)
     
     //system defaults for use with saving user's info
     let defaults = NSUserDefaults.standardUserDefaults()
     
+    //is called when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //sets the current saved emotions to an editable array
         if defaults.objectForKey("savedReports") as? [[String]] ?? [[String]]() != [] {
             main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
         }
@@ -68,8 +72,11 @@ class HomeVC: UIViewController {
             for i in 1...10{
                 if i == 10{
                     self.BaemaxQuote1.text = "Hello \(self.defaults.stringForKey("userName")!)! How are you feeling today?"
-                    self
                 }
+            }
+            
+            if self.main.nameInGreeting == false {
+                self.BaemaxQuote1.text = "Hello! How are you feeling today?"
             }
         }
         okAction.enabled = false
@@ -100,6 +107,11 @@ class HomeVC: UIViewController {
         else {
             BaemaxQuote1.text = "Hello \(defaults.stringForKey("userName")!)! How are you feeling today?"
         }
+        
+        if self.main.nameInGreeting == false {
+            self.BaemaxQuote1.text = "Hello! How are you feeling today?"
+        }
+        
         defaults.setObject(main.saved, forKey: "savedReports")
     }
     
@@ -121,6 +133,7 @@ class HomeVC: UIViewController {
         defaults.synchronize()
     }
     
+    //performs the actions when the sad option is selected
     @IBAction func sadButton(sender: AnyObject) {
         currentEmoji = Emotion(newName: Emoji.Sad, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 2)
         
@@ -137,6 +150,7 @@ class HomeVC: UIViewController {
         defaults.synchronize()
     }
     
+    //performs the actions when the stressed option is selected
     @IBAction func stressButton(sender: AnyObject) {
         currentEmoji = Emotion(newName: Emoji.Stress, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 3)
         
@@ -154,6 +168,7 @@ class HomeVC: UIViewController {
         defaults.synchronize()
     }
     
+    //performs the actions when the bored option is selected
     @IBAction func boredButton(sender: AnyObject) {
         currentEmoji = Emotion(newName: Emoji.Bored, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 4)
         
@@ -171,6 +186,7 @@ class HomeVC: UIViewController {
         defaults.synchronize()
     }
     
+    //performs the actions when the sleepy option is selected
     @IBAction func sleepyButton(sender: AnyObject) {
         currentEmoji = Emotion(newName: Emoji.Sleepy, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 5)
         
@@ -188,6 +204,7 @@ class HomeVC: UIViewController {
         defaults.synchronize()
     }
     
+    //performs the actions when the happy option is selected
     @IBAction func happyButton(sender: AnyObject) {
         currentEmoji = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate(timeIntervalSinceNow: 0), newCompare: 6)
         main.saved.append(currentEmoji.toArray())

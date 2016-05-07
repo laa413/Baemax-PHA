@@ -2,7 +2,7 @@
 //  Emotion.swift
 //  BaemaxPHA
 //
-//  Created by Lindsey Abramson on 4/20/16.
+//  Created by Lindsey Abramson on 5/6/16.
 //  Copyright © 2016 Lindsey Abramson. All rights reserved.
 //
 
@@ -13,7 +13,7 @@ struct Emotion: CustomStringConvertible {
     var date: NSDate!
     var compare: Int!
     
-
+    //initializes a new object with the inputed values
     init(newName:Emoji, newRating:Int, newDate:NSDate, newCompare: Int)
     {
         name = newName
@@ -22,6 +22,7 @@ struct Emotion: CustomStringConvertible {
         compare = newCompare
     }
     
+    //takes a string array and converts it to a object
     init(inputArray:[String])
     {
         let dateFormatter = NSDateFormatter()
@@ -48,13 +49,12 @@ struct Emotion: CustomStringConvertible {
         }
     }
     
-    
+    //converts the object to a string array with all the corresponding values
     func toArray() -> [String] {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
         return [name.rawValue, "\(rating)", dateFormatter.stringFromDate(date), "\(compare)"]
-        
     }
     
     // Implement to support 'CustomStringConvertible'. Basically toString()
@@ -65,18 +65,7 @@ struct Emotion: CustomStringConvertible {
     
 }
 
+//enums with string values for the emotion types
 enum Emoji: String {
     case Sad, Sick, Stress, Bored, Sleepy, Happy
 }
-
-//makes obj
-//var me = Emotion(newName: .Sick, newRating: 20, newDate: NSDate)
-
-//makes object into array
-//var storeMe = me.toArray()
-
-//var array:[[String]] = []
-
-
-//makes object from array again
-//var meAgain = People(inputArray: storeMe)

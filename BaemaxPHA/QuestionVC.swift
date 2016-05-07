@@ -33,6 +33,7 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     var num: Int!
     var selectedRow: Int!
     
+    //is called when the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         self.AnsPicker.dataSource = self;
@@ -41,9 +42,7 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         generateQandA()
         
         defaults.synchronize()
-        //main.saved = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
         defaults.setObject(main.saved, forKey: "savedReports")
-        //print("main.saved:  \(main.saved)")
         defaults.synchronize()
         
         emoji = main.saved[main.saved.count-1][0]
@@ -62,12 +61,13 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     
     //generates the questions and puts them in the linked list along with the results
     func generateQandA(){
-        //questions
-        
+        //the string array where the contents of the plist file are added
         var READIN:[String] = []
         
+        //adds the contents of the plist to the array
         READIN = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("QA", ofType: "plist")!) as! [String]
         
+        //adds each of the appropriate strings to the appropriate linked list for each emotion
         for (var i=0; i<5; i++){
             main.sickList.addItem(READIN[i])
         }
@@ -93,7 +93,6 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         }
         
     }
-    
     
     //function was given in example code found in link in comment above
     func numberOfComponentsInPickerView(AnsPicker: UIPickerView) -> Int {
@@ -129,8 +128,8 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         }else if row == 0 {
             nothingSelected()
         }
-        
         var rando:Int! = Int(arc4random_uniform(3))
+        
         //sad
         if(row == 1 && emoji == Emoji.Sad.rawValue && num >= 1 && num <= 5){
             rando = rando + 2
@@ -209,6 +208,7 @@ class QuestionVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
         rando = 0
     }
     
+    //if there is nothing selected, then it lets the user know so that they can enter an answer
     func nothingSelected() {
         
         let alertController = UIAlertController(title: "Answer needed", message:

@@ -12,7 +12,7 @@
 // Instructor: Dr. Pulimood
 // Project name: BaemaxPHA
 // Description: Application to help people deal with emotions by providing solutions
-// Filename: SettingsVC.swift
+// Filename: SettingsStatsVC.swift
 // Description: source code for the view controller named SetingsVC
 // Last modified on: 4/19/2016
 // Not implemented yet
@@ -29,6 +29,7 @@ class SettingsStatsVC: UIViewController {
     @IBOutlet weak var SleepyPercent:UILabel!
     @IBOutlet weak var HappyPercent:UILabel!
     
+    //variables for the progress bars for each respective emotion
     @IBOutlet weak var SickProgBar: UIProgressView!
     @IBOutlet weak var SadProgBar: UIProgressView!
     @IBOutlet weak var StressProgBar: UIProgressView!
@@ -36,14 +37,17 @@ class SettingsStatsVC: UIViewController {
     @IBOutlet weak var SleepyProgBar: UIProgressView!
     @IBOutlet weak var HappyProgBar: UIProgressView!
     
+    //variables for the image views for the averages, the switch for the include name option, and the data view options for the segmented control
     @IBOutlet weak var pastDWMAvg: UIImageView!
     @IBOutlet weak var overallAvg: UIImageView!
     @IBOutlet weak var IncludeName: UISwitch!
     @IBOutlet weak var DataViewOptions: UISegmentedControl!
     
+    //saves values of what the user has entered for futore use
     let defaults = NSUserDefaults.standardUserDefaults()
     let main = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    //keeps track of the counts of each of the emotions
     var sickCount:Float = 0
     var sadCount:Float = 0
     var stressCount:Float = 0
@@ -51,14 +55,17 @@ class SettingsStatsVC: UIViewController {
     var sleepyCount:Float = 0
     var happyCount:Float = 0
     
+    //arrays of objects of each of the emotions previously entered
     var sortedArrayString: [[String]] = []
     var sortedArrayObject:[Emotion] = []
     
+    //is called when the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //saves the current list of emotions previoulsy entered as the array
         sortedArrayString = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
-        print(sortedArrayString)
+
+        //makes the progress bars thicker so they are more visible on the UI
         SickProgBar.transform = CGAffineTransformScale(SickProgBar.transform, 1, 3)
         SadProgBar.transform = CGAffineTransformScale(SadProgBar.transform, 1, 3)
         StressProgBar.transform = CGAffineTransformScale(StressProgBar.transform, 1, 3)
@@ -66,6 +73,7 @@ class SettingsStatsVC: UIViewController {
         SleepyProgBar.transform = CGAffineTransformScale(SleepyProgBar.transform, 1, 3)
         HappyProgBar.transform = CGAffineTransformScale(HappyProgBar.transform, 1, 3)
         
+        //sets the values of the progress bars to 0 if the saved array in defaults is empty
         if defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]() == [] {
             defaults.setValue(0.0, forKey:"sickPercent")
             defaults.setValue(0.0, forKey:"sadPercent")
@@ -85,19 +93,22 @@ class SettingsStatsVC: UIViewController {
         } else {
             calcPercent()
         }
-
+        
+        //sets the date as a certain format
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
+        //makes an object with the values from the string array and puts it in an object array
         for var i = 0; i<sortedArrayString.count; i++ {
         
             let dateString = dateFormatter.dateFromString(sortedArrayString[i][2])
             
-            var emotionElement: Emotion = Emotion(newName: Emoji(rawValue: sortedArrayString[i][0])!, newRating: Int(sortedArrayString[i][1])!, newDate: (dateString)!, newCompare: Int(sortedArrayString[i][3])!)
+            let emotionElement: Emotion = Emotion(newName: Emoji(rawValue: sortedArrayString[i][0])!, newRating: Int(sortedArrayString[i][1])!, newDate: (dateString)!, newCompare: Int(sortedArrayString[i][3])!)
             
             sortedArrayObject.append(emotionElement)
         }
         
+        //does a quick sort on the object array
         quicksort_swift(&sortedArrayObject, start: sortedArrayObject.startIndex, end: sortedArrayObject.endIndex)
     }
     
@@ -106,10 +117,8 @@ class SettingsStatsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //calculates the percent of each of the emotions with what has been entered, and calculates which is the most common emotion entered and sets the overallAverage image to match
     func calcPercent(){
-        print("default count: \(defaults.objectForKey("savedReports")!.count)")
-        print(defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]())
-        
         for var i = 0; i<main.saved.count; i++ {
             if main.saved[i][0] == Emoji.Sick.rawValue {
                 sickCount += 1
@@ -172,7 +181,7 @@ class SettingsStatsVC: UIViewController {
  
         }
         
-        
+        //sets the value in the progress bars to their corresponding saved values
         SickProgBar.progress = defaults.floatForKey("sickPercent")
         SadProgBar.progress = defaults.floatForKey("sadPercent")
         StressProgBar.progress = defaults.floatForKey("stressPercent")
@@ -180,6 +189,7 @@ class SettingsStatsVC: UIViewController {
         SleepyProgBar.progress = defaults.floatForKey("sleepyPercent")
         HappyProgBar.progress = defaults.floatForKey("happyPercent")
         
+        //sets the string to contain the value of the percent of the corresponding emotion
         SickPercent.text = "Sick: \(String(format:"%.1f", SickProgBar.progress * 100))%"
         SadPercent.text = "Sad:  \(String(format:"%.1f", SadProgBar.progress * 100))%"
         StressPercent.text = "Stress:  \(String(format:"%.1f", StressProgBar.progress * 100))%"
@@ -188,11 +198,12 @@ class SettingsStatsVC: UIViewController {
         HappyPercent.text = "Happy:  \(String(format:"%.1f",HappyProgBar.progress * 100))%"
     }
     
+    //performs a quick sort on the array of objects of emotions
     func quicksort_swift(inout sortedArrayObject:[Emotion], start:Int, end:Int) { //inout is array that needs to be sorted
         if (end - start < 2){
             return
         }
-        var p = sortedArrayObject[start + (end - start)/2]
+        let p = sortedArrayObject[start + (end - start)/2]
         var l = start
         var r = end - 1
         while (l <= r){
@@ -204,7 +215,7 @@ class SettingsStatsVC: UIViewController {
                 r -= 1
                 continue
             }
-            var t = sortedArrayObject[l]
+            let t = sortedArrayObject[l]
             sortedArrayObject[l] = sortedArrayObject[r]
             sortedArrayObject[r] = t
             l += 1
@@ -212,5 +223,15 @@ class SettingsStatsVC: UIViewController {
         }
         quicksort_swift(&sortedArrayObject, start: start, end: r + 1)
         quicksort_swift(&sortedArrayObject, start: r + 1, end: end)
+    }
+    
+    //function for removing the name from the greeting on the home screen if the user wants
+    @IBAction func nameGreeting(sender: UISwitch) {
+        if sender.on == false {
+            main.nameInGreeting = false
+        }
+        if sender.on == true {
+            main.nameInGreeting = true
+        }
     }
 }

@@ -13,7 +13,7 @@
 // Description: Application to help people deal with emotions by providing solutions
 // Filename: MyLinkedList.swift
 /* Description: This is the main structure of the linked list.  This code was slightly changed from what was provided at this link: https://www.erginbilgin.com.tr/implementing-doubly-linked-list-using-swift-2-0/ */
-// Last modified on: 4/19/2016
+// Last modified on: 5/6/2016
 
 import Foundation
 
@@ -29,8 +29,8 @@ class MyLinkedList<T:NSString> { //Lindsey changed T type to NSString
         return self.count == 0
     }
     
-    func addItem(value: T!) {//Lindsey added !
-        var node = Node<T>(value: value!)//Lindsey added !
+    func addItem(value: T!) { //Lindsey added !
+        var node = Node<T>(value: value!) //Lindsey added !
         if self.isEmpty() {
             self.head = node
             self.tail = node

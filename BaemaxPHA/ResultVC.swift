@@ -14,7 +14,7 @@
 // Description: Application to help people deal with emotions by providing solutions
 // Filename: ResultVC.swift
 // Description: source code for the view controller named ResultVC
-// Last modified on: 4/19/2016
+// Last modified on: 5/6/2016
 
 import UIKit
 
@@ -32,39 +32,11 @@ class ResultVC: UIViewController {
         ResultText.text = "\(defaults.stringForKey("answer")!)"
         defaults.setValue("No answer was selected please go back and select an answer", forKey:"answer")
         
-        var savedArray = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
+        let savedArray = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
         defaults.setObject(savedArray, forKey: "savedReports")
         defaults.synchronize()
         
         print("user default: \(defaults.objectForKey("savedReports") as? [[String]] ?? [[String]]())")
-        
-        //makes obj
-        //var me = Emotion(newName: .Sick, newRating: 20, newDate: NSDate())
-        
-        //makes object into array
-        //var storeMe = me.toArray()
-        
-        //makes object from array again
-        //var meAgain = Emotion(inputArray: storeMe)
-        
-        
-        /*for(var i = 0; i < array.count; i += 1){
-         //var emotions = Emotion(inputArray: testArray)
-         //var sortedarray:[Emotion] = []
-         //sortedarray.append(emotions)
-         //print(emotions)
-         //print(sortedarray)
-         
-         var variable = array[0][1]
-         let dateFormatter = NSDateFormatter()
-         dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss zzz"
-         var day = dateFormatter.dateFromString(array[0][2])
-         
-         //sortedarray.append(Emotion(newName: Emoji(rawValue: array[0][0])!, newRating: Int(variable)!, newDate: day!))
-         //sortedarray.append(Emotion(newName: Emoji(rawValue: array[0][0])!, newRating: Int(variable)!, newDate: day!))
-         //print(sortedarray)
-         }*/
-        
     }
     
     override func didReceiveMemoryWarning() {

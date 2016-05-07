@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var sleepyList = MyLinkedList()
     var happyList = MyLinkedList()
     var saved:[[String]] = []
+    var nameInGreeting:Bool = true
     
     let defaults = NSUserDefaults.standardUserDefaults()
 
