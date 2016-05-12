@@ -4,8 +4,17 @@
 //
 //  Created by Lindsey Abramson on 4/20/16.
 //  Copyright © 2016 Lindsey Abramson. All rights reserved.
-//
 
+// Name: Lindsey Abramson
+// Course: CSC 415
+// Semester: Spring 2016
+// Instructor: Dr. Pulimood
+// Project name: BaemaxPHA
+// Description: Application to help people deal with emotions by providing solutions
+// Filename: Question.swift
+// Description: sets the appropriate values in the quote and the picker view for each corresponding combination of emotions and ratings
+// PickerView code was taken from http://sourcefreeze.com/ios-uipickerview-example-using-swift/ and edited to match funciotnality of this applicaiotn
+// Last modified on: 5/6/2016
 import Foundation
 import UIKit
 

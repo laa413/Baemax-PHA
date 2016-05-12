@@ -4,7 +4,16 @@
 //
 //  Created by Lindsey Abramson on 4/27/16.
 //  Copyright © 2016 Lindsey Abramson. All rights reserved.
-//
+
+// Name: Lindsey Abramson
+// Course: CSC 415
+// Semester: Spring 2016
+// Instructor: Dr. Pulimood
+// Project name: BaemaxPHA
+// Description: Application to help people deal with emotions by providing solutions
+// Filename: AppDelegate.swift
+// Description: responsible for creating a ViewController object when it notices that your app has launched
+// Last modified on: 5/12/2016
 
 import UIKit
 
@@ -12,14 +21,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    //Linked Lists for each emotion
     var sickList = MyLinkedList()
     var sadList = MyLinkedList()
     var stressList = MyLinkedList()
     var boredList = MyLinkedList()
     var sleepyList = MyLinkedList()
     var happyList = MyLinkedList()
+    
+    //saved array
     var saved:[[String]] = []
+    
+    //whether the name is put into the greeting
     var nameInGreeting:Bool = true
+    //starting value for the data view options (day, week, month)
     var dataViewOption:Int = -1
     
     let defaults = NSUserDefaults.standardUserDefaults()

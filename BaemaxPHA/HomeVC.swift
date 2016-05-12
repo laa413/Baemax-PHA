@@ -14,7 +14,7 @@
 // Description: Application to help people deal with emotions by providing solutions
 // Filename: ViewController.swift
 // Description: source code for the view controller named HomeVC
-// Last modified on: 4/19/2016
+// Last modified on: 5/12/2016 
 
 import UIKit
 

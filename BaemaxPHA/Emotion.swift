@@ -6,6 +6,16 @@
 //  Copyright © 2016 Lindsey Abramson. All rights reserved.
 //
 
+// Name: Lindsey Abramson
+// Course: CSC 415
+// Semester: Spring 2016
+// Instructor: Dr. Pulimood
+// Project name: BaemaxPHA
+// Description: Application to help people deal with emotions by providing solutions
+// Filename: Emotion.swift
+// Description: source code for the emotion struct and emoji enum
+// Last modified on: 5/6/2016
+
 import Foundation
 struct Emotion: CustomStringConvertible {
     var name:Emoji!

@@ -1,5 +1,5 @@
 //
-//  SettingsVC.swift
+//  SettingsStatsVC.swift
 //  BaemaxPHA
 //
 //  Created by Lindsey Abramson on 4/17/16.
@@ -13,9 +13,8 @@
 // Project name: BaemaxPHA
 // Description: Application to help people deal with emotions by providing solutions
 // Filename: SettingsStatsVC.swift
-// Description: source code for the view controller named SetingsVC
-// Last modified on: 4/19/2016
-// Not implemented yet
+// Description: source code for the view controller named SetingsStatsVC
+// Last modified on: 5/12/2016
 
 import UIKit
 

@@ -14,7 +14,7 @@
 // Description: Application to help people deal with emotions by providing solutions
 // Filename: Node.swift
 /* Description: This is the node structure of the linked list.  This code was taken from what was provided at this link: https://www.erginbilgin.com.tr/implementing-doubly-linked-list-using-swift-2-0/ */
-// Last modified on: 4/19/2016
+// Last modified on: 5/6/2016
 
 import Foundation
 

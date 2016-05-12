@@ -13,7 +13,7 @@
 // Description: Application to help people deal with emotions by providing solutions
 // Filename: RatingVC.swift
 // Description: source code for the view controller named RatingVC
-// Last modified on: 4/19/2016
+// Last modified on: 5/6/2016
 
 import UIKit
 
