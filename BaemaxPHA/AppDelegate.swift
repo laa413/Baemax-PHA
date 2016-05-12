@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var happyList = MyLinkedList()
     var saved:[[String]] = []
     var nameInGreeting:Bool = true
+    var dataViewOption:Int = -1
     
     let defaults = NSUserDefaults.standardUserDefaults()
 

@@ -35,7 +35,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var HappyButton: UIButton!
     
     //the current emotion being entered
-    var currentEmoji: Emotion = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate(), newCompare: 0)
+    var currentEmoji: Emotion = Emotion(newName: Emoji.Happy, newRating: 0, newDate: NSDate.init(timeIntervalSinceNow: 0), newCompare: 0)
     
     //system defaults for use with saving user's info
     let defaults = NSUserDefaults.standardUserDefaults()

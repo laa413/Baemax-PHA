@@ -29,6 +29,9 @@ class SettingsStatsVC: UIViewController {
     @IBOutlet weak var SleepyPercent:UILabel!
     @IBOutlet weak var HappyPercent:UILabel!
     
+    //variable for the suggestion lable and link to UI
+    @IBOutlet weak var Suggestion: UILabel!
+    
     //variables for the progress bars for each respective emotion
     @IBOutlet weak var SickProgBar: UIProgressView!
     @IBOutlet weak var SadProgBar: UIProgressView!
@@ -43,11 +46,11 @@ class SettingsStatsVC: UIViewController {
     @IBOutlet weak var IncludeName: UISwitch!
     @IBOutlet weak var DataViewOptions: UISegmentedControl!
     
-    //saves values of what the user has entered for futore use
+    //saves values of what the user has entered for future use
     let defaults = NSUserDefaults.standardUserDefaults()
     let main = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    //keeps track of the counts of each of the emotions
+    //keeps track of the counts of each of the emotions for overall
     var sickCount:Float = 0
     var sadCount:Float = 0
     var stressCount:Float = 0
@@ -55,17 +58,35 @@ class SettingsStatsVC: UIViewController {
     var sleepyCount:Float = 0
     var happyCount:Float = 0
     
+    //keeps track of the counts of each of the emotions for the day, week, month
+    var sickCount2:Float = 0
+    var sadCount2:Float = 0
+    var stressCount2:Float = 0
+    var boredCount2:Float = 0
+    var sleepyCount2:Float = 0
+    var happyCount2:Float = 0
+    
     //arrays of objects of each of the emotions previously entered
     var sortedArrayString: [[String]] = []
     var sortedArrayObject:[Emotion] = []
+    var day:[[String]] = []
+    var week:[[String]] = []
+    var month:[[String]] = []
     
     //is called when the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //saves the current list of emotions previoulsy entered as the array
         sortedArrayString = defaults.objectForKey("savedReports")! as? [[String]] ?? [[String]]()
-
+        
+        //provides a date format
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ww"
+        
+        //ads the action to the UISwitch for the inclusion of the name in the home screen
         IncludeName.addTarget(self, action: #selector(SettingsStatsVC.nameGreeting(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        
         //makes the progress bars thicker so they are more visible on the UI
         SickProgBar.transform = CGAffineTransformScale(SickProgBar.transform, 1, 3)
         SadProgBar.transform = CGAffineTransformScale(SadProgBar.transform, 1, 3)
@@ -82,7 +103,7 @@ class SettingsStatsVC: UIViewController {
             defaults.setValue(0.0, forKey:"boredPercent")
             defaults.setValue(0.0, forKey:"sleepyPercent")
             defaults.setValue(0.0, forKey:"happyPercent")
-            //print("defaults set to 0")
+
             defaults.synchronize()
             
             SickPercent.text = "Sick: \(String(format:"%.1f", SickProgBar.progress * 100))%"
@@ -93,19 +114,19 @@ class SettingsStatsVC: UIViewController {
             HappyPercent.text = "Happy:  \(String(format:"%.1f",HappyProgBar.progress * 100))%"
         } else {
             calcPercent()
+            DataViewOptionsChange(DataViewOptions)
         }
-        
-        //sets the date as a certain format
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         //makes an object with the values from the string array and puts it in an object array
         for var i = 0; i<sortedArrayString.count; i++ {
-        
+            
+            //makes a date from the string stored in the array
             let dateString = dateFormatter.dateFromString(sortedArrayString[i][2])
             
+            //makes a new emotion object
             let emotionElement: Emotion = Emotion(newName: Emoji(rawValue: sortedArrayString[i][0])!, newRating: Int(sortedArrayString[i][1])!, newDate: (dateString)!, newCompare: Int(sortedArrayString[i][3])!)
             
+            //adds the emotion object to the array that is to be sorted
             sortedArrayObject.append(emotionElement)
         }
         
@@ -120,27 +141,23 @@ class SettingsStatsVC: UIViewController {
     
     //calculates the percent of each of the emotions with what has been entered, and calculates which is the most common emotion entered and sets the overallAverage image to match
     func calcPercent(){
+        
         for var i = 0; i<main.saved.count; i++ {
             if main.saved[i][0] == Emoji.Sick.rawValue {
                 sickCount += 1
-                print(sickCount)
             }else if main.saved[i][0] == Emoji.Sad.rawValue {
                 sadCount += 1
-                print(sadCount)
             }else if main.saved[i][0] == Emoji.Stress.rawValue {
                 stressCount += 1
-                print(stressCount)
             }else if main.saved[i][0] == Emoji.Bored.rawValue {
                 boredCount += 1
-                print(boredCount)
             }else if main.saved[i][0] == Emoji.Sleepy.rawValue {
                 sleepyCount += 1
-                print(sleepyCount)
             }else {
                 happyCount += 1
-                print(happyCount)
             }
             
+            //calculates the overall average of each emotion and saves it as a user default
             defaults.setValue(sickCount/Float(main.saved.count), forKey:"sickPercent")
             defaults.setValue(sadCount/Float(main.saved.count), forKey:"sadPercent")
             defaults.setValue(stressCount/Float(main.saved.count), forKey:"stressPercent")
@@ -149,37 +166,36 @@ class SettingsStatsVC: UIViewController {
             defaults.setValue(happyCount/Float(main.saved.count), forKey:"happyPercent")
             defaults.synchronize()
             
-            defaults.floatForKey("sickPercent")
-
-            
+            //Calculates the overall average for the users emotions and matches it with a suggestion and an image
             if defaults.floatForKey("sickPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("happyPercent") {
-               
+                Suggestion.text = "You should go to a doctor or talk to your parents"
                 overallAvg.image = UIImage(named: "Sick")
                 
-            }else if defaults.floatForKey("sadPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("sickPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("happyPercent") {
-                
+            }else if defaults.floatForKey("sadPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("sadPercent") > defaults.floatForKey("happyPercent") {
+                Suggestion.text = "You should talk to your parents or a professional"
                 overallAvg.image = UIImage(named: "Sad")
                 
             }else if defaults.floatForKey("stressPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("stressPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("stressPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("stressPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("stressPercent") > defaults.floatForKey("happyPercent") {
-                
+                Suggestion.text = "You should try to use some destress techniques"
                 overallAvg.image = UIImage(named: "Stress")
                 
             }else if defaults.floatForKey("boredPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("boredPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("boredPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("boredPercent") > defaults.floatForKey("sleepyPercent") && defaults.floatForKey("boredPercent") > defaults.floatForKey("happyPercent") {
-                
+                Suggestion.text = "You should go play outside"
                 overallAvg.image = UIImage(named: "Bored")
                 
             }else if defaults.floatForKey("sleepyPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("sleepyPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("sleepyPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("sleepyPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("sleepyPercent") > defaults.floatForKey("happyPercent") {
-                
+                Suggestion.text = "You should try to get some sleep"
                 overallAvg.image = UIImage(named: "Tired")
                 
             }else if defaults.floatForKey("happyPercent") > defaults.floatForKey("sickPercent") && defaults.floatForKey("happyPercent") > defaults.floatForKey("sadPercent") && defaults.floatForKey("happyPercent") > defaults.floatForKey("stressPercent") && defaults.floatForKey("happyPercent") > defaults.floatForKey("boredPercent") && defaults.floatForKey("happyPercent") > defaults.floatForKey("sleepyPercent") {
-                
+                Suggestion.text = "I am glad you are happy!"
                 overallAvg.image = UIImage(named: "Happy")
                 
             }else{
+                Suggestion.text = ""
                 overallAvg.image = UIImage(named: "Tie")
             }
- 
+            
         }
         
         //sets the value in the progress bars to their corresponding saved values
@@ -197,6 +213,233 @@ class SettingsStatsVC: UIViewController {
         BoredPercent.text = "Bored:  \(String(format:"%.1f", BoredProgBar.progress * 100))%"
         SleepyPercent.text = "Sleepy:  \(String(format:"%.1f",SleepyProgBar.progress * 100))%"
         HappyPercent.text = "Happy:  \(String(format:"%.1f",HappyProgBar.progress * 100))%"
+    }
+    
+    //calculates the percent of each of the emotions with what has been entered, and calculates which is the most common emotion entered and sets the pastDWM image to match based on what the user has selected in the UISegmentedControl
+    @IBAction func DataViewOptionsChange(sender: AnyObject) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ww"
+        
+        switch DataViewOptions.selectedSegmentIndex
+        {
+            
+        //the user has selected to view the day average
+        case 0:
+            main.dataViewOption = 0
+            let date1 = NSDate()
+            var dateString1 = dateFormatter.stringFromDate(date1)
+            let index1 = dateString1.startIndex.advancedBy(10)
+            
+            for var i = 0; i<main.saved.count; i++ {
+                if (main.saved[i][2].containsString(dateString1.substringToIndex(index1))) {
+                    day.append(main.saved[i])
+                }else{
+                    print("wrong day")
+                }
+                
+            }
+            
+            for var j = 0; j<day.count; j++ {
+                if day[j][0] == Emoji.Sick.rawValue {
+                    sickCount2 += 1
+                }else if day[j][0] == Emoji.Sad.rawValue {
+                    sadCount2 += 1
+                }else if day[j][0] == Emoji.Stress.rawValue {
+                    stressCount2 += 1
+                }else if day[j][0] == Emoji.Bored.rawValue {
+                    boredCount2 += 1
+                }else if day[j][0] == Emoji.Sleepy.rawValue {
+                    sleepyCount2 += 1
+                }else {
+                    happyCount2 += 1
+                }
+            }
+            
+            //Calculates the overall average for the users emotions
+            if sickCount2/Float(day.count) > sadCount2/Float(day.count) && sickCount2/Float(day.count) > stressCount2/Float(day.count) && sickCount2/Float(day.count) > boredCount2/Float(day.count) && sickCount2/Float(day.count) > sleepyCount2/Float(day.count) && sickCount2/Float(day.count) > happyCount2/Float(day.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Sick")
+                
+            }else if sadCount2/Float(day.count) > sickCount2/Float(day.count) && sadCount2/Float(day.count) > stressCount2/Float(day.count) && sadCount2/Float(day.count) > boredCount2/Float(day.count) && sadCount2/Float(day.count) > sleepyCount2/Float(day.count) && sadCount2/Float(day.count) > happyCount2/Float(day.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Sad")
+                
+            }else if stressCount2/Float(day.count) > sickCount2/Float(day.count) && stressCount2/Float(day.count) > sadCount2/Float(day.count) && stressCount2/Float(day.count) > boredCount2/Float(day.count) && stressCount2/Float(day.count) > sleepyCount2/Float(day.count) && stressCount2/Float(day.count) > happyCount2/Float(day.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Stress")
+                
+            }else if boredCount2/Float(day.count) > sickCount2/Float(day.count) && boredCount2/Float(day.count) > sadCount2/Float(day.count) && boredCount2/Float(day.count) > stressCount2/Float(day.count) && boredCount2/Float(day.count) > sleepyCount2/Float(day.count) && boredCount2/Float(day.count) > happyCount2/Float(day.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Bored")
+                
+            }else if sleepyCount2/Float(day.count) > sickCount2/Float(day.count) && sleepyCount2/Float(day.count) > sadCount2/Float(day.count) && sleepyCount2/Float(day.count) > stressCount2/Float(day.count) && sleepyCount2/Float(day.count) > boredCount2/Float(day.count) && sleepyCount2/Float(day.count) > happyCount2/Float(day.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Tired")
+                
+            }else if happyCount2/Float(day.count) > sickCount2/Float(day.count) && happyCount2/Float(day.count) > sadCount2/Float(day.count) && happyCount2/Float(day.count) > stressCount2/Float(day.count) && happyCount2/Float(day.count) > boredCount2/Float(day.count) && happyCount2/Float(day.count) > sleepyCount2/Float(day.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Happy")
+                
+            }else if sickCount2 == 0.0 && sadCount2 == 0.0 && stressCount2 == 0.0 && boredCount2 == 0.0 && sleepyCount2 == 0.0 && happyCount2 == 0.0 {
+                pastDWMAvg.image = UIImage(named: "")
+            }else{
+                pastDWMAvg.image = UIImage(named: "Tie")
+            }
+            
+            //resets the counts and array
+            day = []
+            sickCount2 = 0.0
+            sadCount2 = 0.0
+            stressCount2 = 0.0
+            boredCount2 = 0.0
+            sleepyCount2 = 0.0
+            happyCount2 = 0.0
+            
+        //the user has selected to view the week average
+        case 1:
+            main.dataViewOption = 1
+            var date = NSDate.init(timeIntervalSinceNow: 0)
+            var dateString = dateFormatter.stringFromDate(date)
+            let index1 = dateString.startIndex.advancedBy(20)
+            
+            for var i = 0; i<main.saved.count; i++ {
+                
+                if (main.saved[i][2].containsString(dateString.substringFromIndex(index1))) {
+                    week.append(main.saved[i])
+                }else{
+                    print("wrong week")
+                }
+                
+            }
+            
+            for var j = 0; j<week.count; j++ {
+                if week[j][0] == Emoji.Sick.rawValue {
+                    sickCount2 += 1
+                }else if week[j][0] == Emoji.Sad.rawValue {
+                    sadCount2 += 1
+                }else if week[j][0] == Emoji.Stress.rawValue {
+                    stressCount2 += 1
+                }else if week[j][0] == Emoji.Bored.rawValue {
+                    boredCount2 += 1
+                }else if week[j][0] == Emoji.Sleepy.rawValue {
+                    sleepyCount2 += 1
+                }else {
+                    happyCount2 += 1
+                }
+            }
+            
+            //Calculates the overall average for the users emotions
+            if sickCount2/Float(week.count) > sadCount2/Float(week.count) && sickCount2/Float(week.count) > stressCount2/Float(week.count) && sickCount2/Float(week.count) > boredCount2/Float(week.count) && sickCount2/Float(week.count) > sleepyCount2/Float(week.count) && sickCount2/Float(week.count) > happyCount2/Float(week.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Sick")
+                
+            }else if sadCount2/Float(week.count) > sickCount2/Float(week.count) && sadCount2/Float(week.count) > stressCount2/Float(week.count) && sadCount2/Float(week.count) > boredCount2/Float(week.count) && sadCount2/Float(week.count) > sleepyCount2/Float(week.count) && sadCount2/Float(week.count) > happyCount2/Float(week.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Sad")
+                
+            }else if stressCount2/Float(week.count) > sickCount2/Float(week.count) && stressCount2/Float(week.count) > sadCount2/Float(week.count) && stressCount2/Float(week.count) > boredCount2/Float(week.count) && stressCount2/Float(week.count) > sleepyCount2/Float(week.count) && stressCount2/Float(week.count) > happyCount2/Float(week.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Stress")
+                
+            }else if boredCount2/Float(week.count) > sickCount2/Float(week.count) && boredCount2/Float(week.count) > sadCount2/Float(week.count) && boredCount2/Float(week.count) > stressCount2/Float(week.count) && boredCount2/Float(week.count) > sleepyCount2/Float(week.count) && boredCount2/Float(week.count) > happyCount2/Float(week.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Bored")
+                
+            }else if sleepyCount2/Float(week.count) > sickCount2/Float(week.count) && sleepyCount2/Float(week.count) > sadCount2/Float(week.count) && sleepyCount2/Float(week.count) > stressCount2/Float(week.count) && sleepyCount2/Float(week.count) > boredCount2/Float(week.count) && sleepyCount2/Float(week.count) > happyCount2/Float(week.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Tired")
+                
+            }else if happyCount2/Float(week.count) > sickCount2/Float(week.count) && happyCount2/Float(week.count) > sadCount2/Float(week.count) && happyCount2/Float(week.count) > stressCount2/Float(week.count) && happyCount2/Float(week.count) > boredCount2/Float(week.count) && happyCount2/Float(week.count) > sleepyCount2/Float(week.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Happy")
+                
+            }else{
+                pastDWMAvg.image = UIImage(named: "Tie")
+            }
+            
+            //resets the counts and array
+            week = []
+            sickCount2 = 0.0
+            sadCount2 = 0.0
+            stressCount2 = 0.0
+            boredCount2 = 0.0
+            sleepyCount2 = 0.0
+            happyCount2 = 0.0
+            
+        //the user has selected to view the month average
+        case 2:
+            main.dataViewOption = 2
+            let date = "\(NSDate.init(timeIntervalSinceNow: 0))"
+            let index1 = date.startIndex.advancedBy(7)
+            
+            for var i = 0; i<main.saved.count; i++ {
+                if (main.saved[i][2].containsString(date.substringToIndex(index1))) {
+                    month.append(main.saved[i])
+                }else{
+                    print("wrong month")
+                }
+                
+                }
+            
+            for var j = 0; j<month.count; j++ {
+                if month[j][0] == Emoji.Sick.rawValue {
+                    sickCount2 += 1
+                }else if month[j][0] == Emoji.Sad.rawValue {
+                    sadCount2 += 1
+                }else if month[j][0] == Emoji.Stress.rawValue {
+                    stressCount2 += 1
+                }else if month[j][0] == Emoji.Bored.rawValue {
+                    boredCount2 += 1
+                }else if month[j][0] == Emoji.Sleepy.rawValue {
+                    sleepyCount2 += 1
+                }else {
+                    happyCount2 += 1
+                }
+            }
+            
+            //Calculates the overall average for the users emotions
+            if sickCount2/Float(month.count) > sadCount2/Float(month.count) && sickCount2/Float(month.count) > stressCount2/Float(month.count) && sickCount2/Float(month.count) > boredCount2/Float(month.count) && sickCount2/Float(month.count) > sleepyCount2/Float(month.count) && sickCount2/Float(month.count) > happyCount2/Float(month.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Sick")
+                
+            }else if sadCount2/Float(month.count) > sickCount2/Float(month.count) && sadCount2/Float(month.count) > stressCount2/Float(month.count) && sadCount2/Float(month.count) > boredCount2/Float(month.count) && sadCount2/Float(month.count) > sleepyCount2/Float(month.count) && sadCount2/Float(month.count) > happyCount2/Float(month.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Sad")
+                
+            }else if stressCount2/Float(month.count) > sickCount2/Float(month.count) && stressCount2/Float(month.count) > sadCount2/Float(month.count) && stressCount2/Float(month.count) > boredCount2/Float(month.count) && stressCount2/Float(month.count) > sleepyCount2/Float(month.count) && stressCount2/Float(month.count) > happyCount2/Float(month.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Stress")
+                
+            }else if boredCount2/Float(month.count) > sickCount2/Float(month.count) && boredCount2/Float(month.count) > sadCount2/Float(month.count) && boredCount2/Float(month.count) > stressCount2/Float(month.count) && boredCount2/Float(month.count) > sleepyCount2/Float(month.count) && boredCount2/Float(month.count) > happyCount2/Float(month.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Bored")
+                
+            }else if sleepyCount2/Float(month.count) > sickCount2/Float(month.count) && sleepyCount2/Float(month.count) > sadCount2/Float(month.count) && sleepyCount2/Float(month.count) > stressCount2/Float(month.count) && sleepyCount2/Float(month.count) > boredCount2/Float(month.count) && sleepyCount2/Float(month.count) > happyCount2/Float(month.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Tired")
+                
+            }else if happyCount2/Float(month.count) > sickCount2/Float(month.count) && happyCount2/Float(month.count) > sadCount2/Float(month.count) && happyCount2/Float(month.count) > stressCount2/Float(month.count) && happyCount2/Float(month.count) > boredCount2/Float(month.count) && happyCount2/Float(month.count) > sleepyCount2/Float(month.count) {
+                
+                pastDWMAvg.image = UIImage(named: "Happy")
+                
+            }else{
+                pastDWMAvg.image = UIImage(named: "Tie")
+            }
+            
+            //resets the counts and array
+            month = []
+            sickCount2 = 0.0
+            sadCount2 = 0.0
+            stressCount2 = 0.0
+            boredCount2 = 0.0
+            sleepyCount2 = 0.0
+            happyCount2 = 0.0
+            
+        default:
+            break;
+        }
+        
+        self.DataViewOptions.selectedSegmentIndex = main.dataViewOption
     }
     
     //performs a quick sort on the array of objects of emotions
@@ -226,8 +469,10 @@ class SettingsStatsVC: UIViewController {
         quicksort_swift(&sortedArrayObject, start: r + 1, end: end)
     }
     
+    //function loads the proper state of the uiswitch
     override func viewWillAppear(animated: Bool) {
         IncludeName.on = main.nameInGreeting
+        DataViewOptionsChange(DataViewOptions)
     }
     
     //function for removing the name from the greeting on the home screen if the user wants

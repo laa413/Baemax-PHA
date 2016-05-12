@@ -52,7 +52,7 @@ struct Emotion: CustomStringConvertible {
     //converts the object to a string array with all the corresponding values
     func toArray() -> [String] {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss ww"
 
         return [name.rawValue, "\(rating)", dateFormatter.stringFromDate(date), "\(compare)"]
     }
